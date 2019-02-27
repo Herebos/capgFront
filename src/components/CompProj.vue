@@ -2,7 +2,7 @@
     <div class="hello">
 
 
-        <div class="cardCont justify-content-center">
+        <div class="cardCont">
             <div class="card" v-for="(event, n) in events" :key="n">
                 <div class="card-body" style="border-bottom: 1px solid #ececec">
                     <h4 class="card-title"> {{ event.name }}
@@ -79,6 +79,7 @@
         height: 100%;
         margin: auto;
         display: flex;
+        justify-content: space-evenly;
         width: 80%;
         flex-wrap: wrap;
     }
