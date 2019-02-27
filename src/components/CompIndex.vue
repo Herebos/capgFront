@@ -1,6 +1,6 @@
 <template>
     <div class="hello">
-        <h1>Bienvenue sur Cap-Engagment {{ user.name }} !</h1>
+        <h1>Bienvenue sur Cap-Engagment {{ this.user.name }} !</h1>
 
     </div>
 </template>

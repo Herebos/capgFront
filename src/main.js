@@ -11,8 +11,10 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import { faDotCircle } from '@fortawesome/free-solid-svg-icons'
 import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons'
 import VueResource from 'vue-resource'
+import VueMoment from 'vue-moment'
 
 Vue.use(VueResource);
+Vue.use(VueMoment);
 
 library.add(faAngleDoubleUp)
 library.add(faChevronCircleDown)

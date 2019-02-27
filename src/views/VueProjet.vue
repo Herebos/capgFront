@@ -25,13 +25,6 @@
 
 
 <style>
-    .containerProj {
-        height: 100%;
-        margin: auto;
-        display: flex;
-        width: 80%;
-        box-sizing: border-box;
-        flex-wrap: wrap;
-    }
+
 
 </style>

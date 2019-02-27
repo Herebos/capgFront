@@ -1,53 +1,37 @@
 <template>
     <div class="hello">
 
-        <!--
-        <div class="cardCont">
-            <b-card no-body style="max-width: 50rem; min-width: 20rem;">
-                <h4 class="h4Head" slot="header"> {{ event.name }} 
-                    <font-awesome-icon title="Add to favorite" class="leclik" :icon="icon" @click="putFav" />
-                </h4>
-                <b-card-body>
-                    <b-card :title="name">
-                        <p>
-                           {{ event.id }} <br>
-                            {{ event.description }}
-                        </p>
-                    </b-card>
-                </b-card-body>
-                <b-list-group flush>
-                    <b-list-group-item>Nombres de places et Entitées : <br> {{ event.placeNumber }} | {{ event.entityCap }} </b-list-group-item>
-                    <b-list-group-item>Début : {{ event.startDate }} | Fin : {{ event.endDate }} </b-list-group-item>
-                </b-list-group>
-                <b-card-body>
-                    Lien vers l'event :
-                    <a href="#" class="card-link">Card link</a>
-                </b-card-body>
-            </b-card>
+
+        <div class="cardCont justify-content-center">
+            <div class="card" v-for="(event, n) in events" :key="n">
+                <div class="card-body" style="border-bottom: 1px solid #ececec">
+                    <h4 class="card-title"> {{ event.name }}
+                        <font-awesome-icon title="Add to favorite" class="leclik" :icon="icon" @click="putFav" />
+                    </h4>
+                    <p class="card-text">{{ event.description }}</p>
+                </div>
+                <div class="card-body" style="border-bottom: 1px solid #ececec">
+                    <p class="card-text">Nombres de places et Entitées :</p> <p class="card-text"> {{ event.placeNumber }} | {{ event.entityCap.name }} </p>
+                    <p class="card-text">Début : {{ event.startDate || moment("dddd, MMMM Do YYYY") }} <br> Fin : {{ event.endDate | moment("dddd, MMMM Do YYYY") }} </p>
+                </div>
+                <div class="card-body" v-if="event.project != null">
+                    
+                    <p class="card-text"> Projet lié à l'événement : <strong> {{ event.project.name }} </strong><br>
+                    {{ event.project.description }}</p>
+                </div>
+
+            </div>
+
         </div>
--->
 
 
-        <table id="events" class="table table-bordered table-hover">
-            <thead class="thead-light">
-                <tr>
-                    <th v-for="(prop, p) in eventsProps" :key="p" > {{prop}} </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(event, n) in events" :key="n" >
-                    <td v-for="(prop, p) in event" :key="p"> {{ prop }} </td>
-                </tr>
-            </tbody>
-        </table>
-   
-   
     </div>
 </template>
 
 
 <script>
     import axios from "axios";
+    import moment from "moment";
     export default {
         name: 'displayProj',
         data() {
@@ -94,14 +78,15 @@
 
 
 <style lang="scss" scoped>
-    #events {
-        border-collapse: collapse;
+    .cardCont {
+        height: 100%;
+        margin: auto;
+        display: flex;
+        width: 80%;
+    }
 
-        td,
-        th {
-            border: 1px solid;
-            padding: 10px;
-        }
+    .card {
+        max-width: 25%;
     }
 
     .leclik {
