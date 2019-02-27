@@ -14,7 +14,7 @@
                 <div>Selected: <strong>{{ form.status }}</strong></div>
             </div>
 
-            <div v-if="form.status != null" class="formInscri">
+            <div v-if="form.status != ''" class="formInscri">
                 <div class="form-group">
                     <label for="email">Email : <span class="requis">*</span></label>
                     <input id="email" class="form-control" type="email" v-model="form.email" required placeholder="Enter email">

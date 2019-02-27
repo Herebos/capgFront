@@ -17,7 +17,7 @@
             </div>
 
 
-            <div v-if="type != null" class="formProject">
+            <div v-if="type != ''" class="formProject">
                 <div class="form-group" v-if="type == 'project'">
                     <label for="name">Nom du Projet: <span class="requis">*</span></label>
                     <input class="form-control" type="text" v-model="form.name" required placeholder="Enter Project name" maxlength="50">
