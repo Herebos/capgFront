@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="form-group" v-if="form.status === 'salarie'">
-                    <label for="lastName">Lastname : <span class="requis">*</span></label>
+                    <label for="lastName">Surname : <span class="requis">*</span></label>
                     <input id="name" class="form-control" type="text" v-model="form.lastName" required placeholder="Enter lastname">
                 </div>
 
@@ -45,8 +45,8 @@
                     <label for="password">Password : <span class="requis">*</span></label>
                     <div class="input-group mb-3">
                         <input id="password" class="form-control" :type="type" v-model="form.password" required placeholder="Enter password" pattern=".{8,}" aria-describedby="passwordHelp">
-                        <div class="input-group-append"><a class="eye" @click="showPassword">
-                                <font-awesome-icon :icon="icon" /></a></div>
+                        <div class="input-group-append"><a class="eye" @click="type === 'text' ? type = 'password' : type = 'text'"> <!--Ternary function-->
+                                <font-awesome-icon :icon="type === 'text' ? 'eye' : 'eye-slash'" /></a></div> <!--Ternary function-->
                     </div>
                     <small id="passwordHelp" class="form-text text-muted">Eight (8) characters minimum</small>
                 </div>
@@ -55,8 +55,8 @@
                     <label for="checkPassword">Confirm Password : <span class="requis">*</span></label>
                     <div class="input-group mb-3">
                         <input id="checkPassword" class="form-control" :type="type" v-model="form.checkPassword" required placeholder="Enter password" pattern=".{8,}" aria-describedby="passwordHelp">
-                        <div class="input-group-append"><a class="eye" @click="showPassword">
-                                <font-awesome-icon :icon="icon" /></a></div>
+                        <div class="input-group-append"><a class="eye" @click="type === 'text' ? type = 'password' : type = 'text'">
+                                <font-awesome-icon :icon="type === 'text' ? 'eye' : 'eye-slash'" /></a></div>
                     </div>
                     <small id="passwordHelp" class="form-text text-muted">Confirm Password</small>
                     <div v-if="form.password != form.checkPassword">
@@ -176,18 +176,6 @@
                         this.form = response.data
                         console.log('perdu =>', response);
                     });
-            },
-
-            showPassword() {
-                if (this.type === 'password') {
-                    this.type = 'text'
-                    this.btnText = 'Hide Password'
-                    this.icon = 'eye-slash'
-                } else {
-                    this.type = 'password'
-                    this.btnText = 'Show Password'
-                    this.icon = 'eye'
-                }
             },
         },
     }

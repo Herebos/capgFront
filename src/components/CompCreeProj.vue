@@ -16,12 +16,12 @@
             <div v-if="type != ''" class="formProject">
                 <div class="form-group" v-if="type == 'project'">
                     <label for="name">Nom du Projet: <span class="requis">*</span></label>
-                    <input class="form-control" type="text" v-model="form.name" required placeholder="Enter Project name" maxlength="50">
+                    <input id="name" class="form-control" type="text" v-model="form.name" required placeholder="Enter Project name" maxlength="50">
                 </div>
 
                 <div class="form-group" v-if="type == 'event'">
                     <label for="name">Nom de l'événement: <span class="requis">*</span></label>
-                    <input class="form-control" type="text" v-model="form.name" required placeholder="Enter Project name">
+                    <input id="name" class="form-control" type="text" v-model="form.name" required placeholder="Enter Project name">
                 </div>
 
 
@@ -45,7 +45,7 @@
                     <div class="form-row">
                         <div class="col-7">
                             <label for="placeNumber">Nombre de personnes: <span class="requis">*</span></label>
-                            <input type="number" class="form-control" v-model="form.placeNumber" placeholder="nbr" required>
+                            <input id="placeNumber" type="number" class="form-control" v-model="form.placeNumber" placeholder="nbr" required>
                         </div>
                         <div class="col">
                             <label for="division">Entité:</label>
@@ -64,11 +64,11 @@
                 <!--Metrre en anglais si pb db-->
                 <div class="form-group">
                     <label for="startDate">Date de début:</label>
-                    <input class="form-control" type="date" v-model="form.startDate">
+                    <input id="startDate" class="form-control" type="date" v-model="form.startDate">
                 </div>
                 <div class="form-group">
                     <label for="endDate">Date de fin:</label>
-                    <input class="form-control" type="date" v-model="form.endDate">
+                    <input id="endDate" class="form-control" type="date" v-model="form.endDate">
                 </div>
 
 
