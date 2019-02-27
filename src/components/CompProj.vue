@@ -12,18 +12,15 @@
                 </div>
                 <div class="card-body" style="border-bottom: 1px solid #ececec">
                     <p class="card-text">Nombres de places et Entitées :</p> <p class="card-text"> {{ event.placeNumber }} | {{ event.entityCap.name }} </p>
-                    <p class="card-text">Début : {{ event.startDate || moment("dddd, MMMM Do YYYY") }} <br> Fin : {{ event.endDate | moment("dddd, MMMM Do YYYY") }} </p>
+                    <p class="card-text">Début : {{ event.startDate | moment("MMMM Do YYYY") }} <br> Fin : {{ event.endDate | moment("MMMM Do YYYY") }} </p>
                 </div>
                 <div class="card-body" v-if="event.project != null">
                     
                     <p class="card-text"> Projet lié à l'événement : <strong> {{ event.project.name }} </strong><br>
                     {{ event.project.description }}</p>
                 </div>
-
             </div>
-
         </div>
-
 
     </div>
 </template>
@@ -83,10 +80,12 @@
         margin: auto;
         display: flex;
         width: 80%;
+        flex-wrap: wrap;
     }
 
     .card {
-        max-width: 25%;
+        width: 30%;
+        //max-width: 35%;
     }
 
     .leclik {

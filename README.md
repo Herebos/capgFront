@@ -1,5 +1,7 @@
 # capgemini
+## All logo & text are the proprety of Capgemini.
 
+### Project use Boostrap-vue, moment-vue
 
 
 ## Project setup

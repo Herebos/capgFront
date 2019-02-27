@@ -131,7 +131,7 @@
                 console.log("En attente de post...")
                 axios.post('http://10.65.12.107:8181/api/events', this.form).then((response) => {
                         console.log('Bien ouej =>', response);
-                        //this.$router.push("/vueprojet");
+                        this.$router.push("/vueprojet");
                     })
                     .catch((response) => {
                         this.form = response.data
