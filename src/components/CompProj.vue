@@ -8,7 +8,7 @@
                     <h4 class="card-title"> {{ event.name }}
                         <font-awesome-icon title="Add to favorite" class="leclik" :icon="icon" @click="putFav" />
                     </h4>
-                    <p class="card-text">{{ event.description }}</p>
+                    <p class="card-text">{{ event.description }} <br> {{ event.city.name }}</p>
                 </div>
                 <div class="card-body" style="border-bottom: 1px solid #ececec">
                     <p class="card-text">Nombres de places et Entitées :</p> <p class="card-text"> {{ event.placeNumber }} | {{ event.entityCap.name }} </p>
@@ -28,7 +28,6 @@
 
 <script>
     import axios from "axios";
-    import moment from "moment";
     export default {
         name: 'displayProj',
         data() {
