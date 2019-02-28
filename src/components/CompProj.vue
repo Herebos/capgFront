@@ -36,11 +36,11 @@
                 events: [],
             }
         },
-        computed: {
-            eventsProps() {
-                return this.events[0] ? Object.keys(this.events[0]) : [];
-            }
-        },
+//        computed: {
+//            eventsProps() {
+//                return this.events[0] ? Object.keys(this.events[0]) : [];
+//            }
+//        },
         methods: {
 
             onLoad() {

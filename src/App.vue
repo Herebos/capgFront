@@ -50,6 +50,12 @@
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
                             <router-link to="/vueprojet">Parcourir les projet</router-link>
                         </b-dropdown-item>
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive">
+                            <router-link to="/profil">Mon profil</router-link>
+                        </b-dropdown-item>
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive">
+                            <router-link to="/login">Login</router-link>
+                        </b-dropdown-item>
                     </b-nav-item-dropdown>
                 </b-navbar-nav>
 

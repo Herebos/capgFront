@@ -4,14 +4,11 @@ import router from './router'
 import store from './store'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons'
-import { faEyeSlash } from '@fortawesome/free-solid-svg-icons'
-import { faEye } from '@fortawesome/free-solid-svg-icons'
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
-import { faDotCircle } from '@fortawesome/free-solid-svg-icons'
-import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faLock,faUserCircle,faBell, faBellSlash,faCalendarAlt,faCog,faUserCog, faChevronCircleDown, faEyeSlash, faEye, faCheckCircle, faDotCircle, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons'
 import VueResource from 'vue-resource'
 import VueMoment from 'vue-moment'
+
+
 
 Vue.use(VueResource);
 Vue.use(VueMoment);
@@ -22,6 +19,14 @@ library.add(faEyeSlash)
 library.add(faEye)
 library.add(faCheckCircle)
 library.add(faDotCircle)
+library.add(faUser)
+library.add(faLock)
+library.add(faUserCircle)
+library.add(faBell)
+library.add(faBellSlash)
+library.add(faCalendarAlt)
+library.add(faCog)
+library.add(faUserCog)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
