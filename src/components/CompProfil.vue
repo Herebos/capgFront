@@ -8,7 +8,7 @@
             <ul>
                 <li>
                     <font-awesome-icon icon="calendar-alt" />
-                    <a href="">Mes Évènements</a>
+                    <router-link :to="{name: 'profilEvent'}">My Events</router-link>
                 </li>
                 <li>
                     <font-awesome-icon icon="edit" />
@@ -16,6 +16,7 @@
                 </li>
                 <li>
                     <font-awesome-icon icon="cog" /><a href="">Mes paramètres</a>
+                    
                 </li>
             </ul>
         </div>

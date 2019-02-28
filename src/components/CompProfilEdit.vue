@@ -5,31 +5,31 @@
         <div>
            <div class="form-group">
             <span>Entity: {{user.entityCap.name}}</span>
-            <input type="text" v-model="user.entityCap.name" v-if="isEditing">
+            <input type="text" v-model="user.entityCap.name" v-if="isEditing" @keyup.enter="$emit('update')">
     </div>
             <div class="form-group">
             <span>Nom: {{user.name}}</span>
-            <input type="text" v-model="user.name" v-if="isEditing">
+            <input type="text" v-model="user.name" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
             
             <div class="form-group">
             <span>Email: {{user.email}}</span>
-            <input type="email" v-model="user.email" v-if="isEditing">
+            <input type="email" v-model="user.email" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
             
             <div class="form-group">
             <span>Prénom: {{user.lastName}}</span>
-            <input type="text" v-model="user.lastName" v-if="isEditing">
+            <input type="text" v-model="user.lastName" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
             
             <div class="form-group">
             <span>Télephone: {{user.phoneNumber}}</span>
-            <input type="tel" v-model="user.phoneNumber" v-if="isEditing">
+            <input type="tel" v-model="user.phoneNumber" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
             
             <div class="form-group">
             <span>Ville: {{user.city.name}}</span>
-            <input type="text" v-model="user.city.name" v-if="isEditing">
+            <input type="text" v-model="user.city.name" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
             
 <!--
