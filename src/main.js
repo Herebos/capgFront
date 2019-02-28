@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faUser, faLock,faUserCircle,faBell, faBellSlash,faCalendarAlt,faCog,faUserCog, faChevronCircleDown, faEyeSlash, faEye, faCheckCircle, faDotCircle, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faUser, faLock,faUserCircle,faBell, faBellSlash,faCalendarAlt,faCog,faUserCog, faChevronCircleDown, faEyeSlash, faEye, faCheckCircle, faDotCircle, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons'
 import VueResource from 'vue-resource'
 import VueMoment from 'vue-moment'
 
@@ -27,6 +27,7 @@ library.add(faBellSlash)
 library.add(faCalendarAlt)
 library.add(faCog)
 library.add(faUserCog)
+library.add(faEdit)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

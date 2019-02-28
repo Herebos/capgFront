@@ -24,11 +24,8 @@
                         <button class="btn btn-primary btn-lg rounded" name="submit" value="Submit" type="submit">Submit</button>
                     </div>
                 </div>
-
-
-
-
             </form>
+            
         </div>
 
     </div>
@@ -53,7 +50,7 @@
         },
         methods: {
             login() {
-                axios.post('http://localhost:8181/api/account/login', this.form)
+                axios.post('http://192.168.0.40:8181/api/account/login', this.form)
                     .then(response => {
                         console.log('gg', response);
                     })
