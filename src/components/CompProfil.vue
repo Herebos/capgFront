@@ -7,15 +7,15 @@
             </router-link>
             <ul>
                 <li>
-                    <font-awesome-icon icon="calendar-alt" />
+                    <font-awesome-icon class="icon" icon="calendar-alt" />
                     <router-link :to="{name: 'profilEvent'}">My Events</router-link>
                 </li>
                 <li>
-                    <font-awesome-icon icon="edit" />
-                    <router-link :to="{name: 'editInfo'}">Editer mes informations</router-link>
+                    <font-awesome-icon class="icon" icon="edit" />
+                    <router-link :to="{name: 'editInfo'}">Edit my Info</router-link>
                 </li>
                 <li>
-                    <font-awesome-icon icon="cog" /><a href="">Mes paramètres</a>
+                    <font-awesome-icon class="icon" icon="cog" /><a href="">Account Parameters</a>
                     
                 </li>
             </ul>
@@ -42,6 +42,9 @@
 
 </script>
 <style scoped>
+    .icon {
+        margin-right: 10px;
+    }
     
     #blockcontainer {
         display: flex;

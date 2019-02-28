@@ -2,43 +2,36 @@
     <div class="infos">
         <h2 class="editprofil">Éditer mon profil</h2>
         <hr>
-        <div>
-           <div class="form-group">
-            <span>Entity: {{user.entityCap.name}}</span>
-            <input type="text" v-model="user.entityCap.name" v-if="isEditing" @keyup.enter="$emit('update')">
-    </div>
+        <div class="text-left" style="margin: auto; width: 70%;">
             <div class="form-group">
-            <span>Nom: {{user.name}}</span>
-            <input type="text" v-model="user.name" v-if="isEditing" @keyup.enter="$emit('update')">
+                <span>Entity: {{user.entityCap.name}}</span> <br>
+                <input type="text" v-model="user.entityCap.name" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
-            
             <div class="form-group">
-            <span>Email: {{user.email}}</span>
-            <input type="email" v-model="user.email" v-if="isEditing" @keyup.enter="$emit('update')">
+                <span>Name: {{user.name}}</span> <br>
+                <input type="text" v-model="user.name" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
-            
+
             <div class="form-group">
-            <span>Prénom: {{user.lastName}}</span>
-            <input type="text" v-model="user.lastName" v-if="isEditing" @keyup.enter="$emit('update')">
+                <span>Surname: {{user.lastName}}</span> <br>
+                <input type="text" v-model="user.lastName" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
-            
+
             <div class="form-group">
-            <span>Télephone: {{user.phoneNumber}}</span>
-            <input type="tel" v-model="user.phoneNumber" v-if="isEditing" @keyup.enter="$emit('update')">
+                <span>Email: {{user.email}}</span> <br>
+                <input type="email" v-model="user.email" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
-            
+
             <div class="form-group">
-            <span>Ville: {{user.city.name}}</span>
-            <input type="text" v-model="user.city.name" v-if="isEditing" @keyup.enter="$emit('update')">
+                <span>Phone: {{user.phoneNumber}}</span> <br>
+                <input type="tel" v-model="user.phoneNumber" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
-            
-<!--
+
             <div class="form-group">
-                <label for="Entity">Entity: {{user.entityCap.name}}</label>
-                <input id="Entity" type="text" class="form-control" :value="user.entityCap.name">
+                <span>City: {{user.city.name}}</span> <br>
+                <input type="text" v-model="user.city.name" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
--->
-            
+
 
             <button @click="edit()" class="btn btn-primary btn-lg rounded">Valider</button>
         </div>
@@ -94,7 +87,7 @@
         position: relative;
     }
 
-/*
+    /*
     span {
         padding: 10px;
         font-weight: bold;
