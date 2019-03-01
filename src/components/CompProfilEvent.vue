@@ -5,7 +5,7 @@
         <div>
              
             <div class="cardCont">
-            <div class="card"> <!--v-for="(event, n) in events" :key="n"-->
+            <div class="card">
                 <div class="card-body" style="border-bottom: 1px solid #ececec">
                     <h4 class="card-title"> {{ events.name }}
                         <font-awesome-icon title="Add to favorite" class="leclik" :icon="icon" @click="putFav" />
@@ -13,8 +13,8 @@
                     <p class="card-text">{{ events.description }} <br> {{ events.city.name }}</p>
                 </div>
                 <div class="card-body" style="border-bottom: 1px solid #ececec">
-                    <p class="card-text">Nombres de places et Entitées :</p> <p class="card-text"> {{ events.placeNumber }} | {{ events.entityCap.name }} </p>
-                    <p class="card-text">Début : {{ events.startDate | moment("MMMM Do YYYY") }} <br> Fin : {{ events.endDate | moment("MMMM Do YYYY") }} </p>
+                    <p class="card-text">Nombres de places et Entities :</p> <p class="card-text"> {{ events.placeNumber }} | {{ events.entityCap.name }} </p>
+                    <p class="card-text">Debut : {{ events.startDate | moment("MMMM Do YYYY") }} <br> Fin : {{ events.endDate | moment("MMMM Do YYYY") }} </p>
                 </div>
                 <div class="card-body" v-if="events.project != null">
                     

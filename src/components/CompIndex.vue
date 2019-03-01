@@ -19,7 +19,7 @@
             onLoad() {
                 console.log("En attente de get...")
                 //Pour les test 'http://httpbin.org/post'
-                axios.get('http://192.168.0.40:8181/api/users/1')
+                axios.get('http://192.168.0.40:8181/api/users/current')
                     .then((response) => {
                         this.user = response.data;
                         console.log("gg", response);

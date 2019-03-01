@@ -6,15 +6,15 @@
         
         <h3>Que voulez-faire ?</h3>
 
-        <div class="nani">
-            <!-- TODO -->
-            <p>rajouter texte de presentation</p>
-            <router-link to="/inscription">Inscription</router-link>
-            <a href="#">Login</a>
-            <router-link to="/about">About</router-link>
-            <router-link to="/creeprojet">Crée un Projet</router-link>
-            <router-link to="/vueprojet">Parcourir les projet</router-link>
-        </div>
+        <!--<div class="nani">-->
+            <!--&lt;!&ndash; TODO &ndash;&gt;-->
+            <!--<p>rajouter texte de presentation</p>-->
+            <!--<router-link to="/inscription">Inscription</router-link>-->
+            <!--<a href="#">Login</a>-->
+            <!--<router-link to="/about">About</router-link>-->
+            <!--<router-link to="/creeprojet">Crée un Projet</router-link>-->
+            <!--<router-link to="/vueprojet">Parcourir les projet</router-link>-->
+        <!--</div>-->
 
 
 

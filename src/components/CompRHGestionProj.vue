@@ -1,13 +1,13 @@
 <template>
-    <div class="hello">
-
+    <div class="gestProj">
+        <h2 class="editprofil">Events</h2>
+        <hr>
+        <div>
 
         <div class="cardCont">
             <div class="card" v-for="(event, n) in events" :key="n">
                 <div class="card-body" style="border-bottom: 1px solid #ececec">
-                    <h4 class="card-title"> {{ event.name }}
-                        <font-awesome-icon title="Add to favorite" class="leclik" :icon="icon" @click="icon === 'dot-circle' ? icon = 'check-circle' : icon = 'dot-circle'" />
-                    </h4>
+                    <h4 class="card-title"> {{ event.name }} </h4>
                     <p class="card-text">{{ event.description }} <br> {{ event.city.name }}</p>
                 </div>
                 <div class="card-body" style="border-bottom: 1px solid #ececec">
@@ -15,13 +15,15 @@
                     <p class="card-text">Début : {{ event.startDate | moment("MMMM Do YYYY") }} <br> Fin : {{ event.endDate | moment("MMMM Do YYYY") }} </p>
                 </div>
                 <div class="card-body" v-if="event.project != null">
-                    
+
                     <p class="card-text"> Projet lié à l'événement : <strong> {{ event.project.name }} </strong><br>
-                    {{ event.project.description }}</p>
+                        {{ event.project.description }}</p>
                 </div>
+
             </div>
         </div>
 
+        </div>
     </div>
 </template>
 
@@ -29,10 +31,9 @@
 <script>
     import axios from "axios";
     export default {
-        name: 'displayProj',
+        name: 'gestionProj',
         data() {
             return {
-                icon: 'dot-circle',
                 events: [],
             }
         },
@@ -56,14 +57,6 @@
                         console.log("nul", error);
                     })
             },
-            //            http://192.168.0.40:8080/api/events
-            // putFav() {
-            //     if (this.icon === 'dot-circle') {
-            //         this.icon = 'check-circle'
-            //     } else {
-            //         this.icon = 'dot-circle'
-            //     }
-            // }
         },
         mounted() {
             this.onLoad()
@@ -74,6 +67,11 @@
 
 
 <style lang="scss" scoped>
+    .gestProj {
+        flex: 10;
+        top: 5%;
+        position: relative;
+    }
     .cardCont {
         height: 100%;
         margin: auto;

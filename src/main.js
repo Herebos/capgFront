@@ -4,15 +4,17 @@ import router from './router'
 import store from './store'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faEdit, faUser, faLock,faUserCircle,faBell, faBellSlash,faCalendarAlt,faCog,faUserCog, faChevronCircleDown, faEyeSlash, faEye, faCheckCircle, faDotCircle, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons'
+import { faProjectDiagram, faEdit, faUser, faLock,faUserCircle,faBell, faBellSlash,faCalendarAlt,faCog,faUserCog, faChevronCircleDown, faEyeSlash, faEye, faCheckCircle, faDotCircle, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons'
 import VueResource from 'vue-resource'
 import VueMoment from 'vue-moment'
+import './axios.config'
 
 
 
 Vue.use(VueResource);
 Vue.use(VueMoment);
 
+library.add(faProjectDiagram)
 library.add(faAngleDoubleUp)
 library.add(faChevronCircleDown)
 library.add(faEyeSlash)
