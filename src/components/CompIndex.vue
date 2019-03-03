@@ -1,17 +1,15 @@
 <template>
     <div class="hello">
-        <h1>Bienvenue sur Cap-Engagment {{ this.user.name }} !</h1>
+        <h1>Bienvenue sur Cap-Engagment {{user.name}} !</h1>
 
     </div>
 </template>
 
-<script>
+<script>    
     import axios from 'axios';
     export default {
         name: 'Index',
-        props: {
-            msg: String
-        },
+        
         data() {
             return {
                 user: [],
@@ -21,9 +19,9 @@
             onLoad() {
                 console.log("En attente de get...")
                 //Pour les test 'http://httpbin.org/post'
-                axios.get('localhost:8181/api/users/1')
+                axios.get('http://192.168.0.40:8181/api/users/1')
                     .then((response) => {
-                        this.events = response.data;
+                        this.user = response.data;
                         console.log("gg", response);
                     })
                     .catch((error) => {
@@ -32,6 +30,9 @@
                     })
             },
         },
+        mounted() {
+            this.onLoad();
+        }
     }
 
 </script>

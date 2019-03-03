@@ -4,7 +4,7 @@
 
 
 
-            <form action="submit">
+            <form @submit="$event.preventDefault()">
                 <div class="formLogin">
                     <div class="form-group">
                         <label for="email">Email :</label>
@@ -20,15 +20,12 @@
                             <!--Ternary function-->
                         </div>
                     </div>
-                    <div v-if="form.password != ''" class="bouton">
-                        <button class="btn btn-primary btn-lg rounded" name="submit" value="Submit" type="submit">Submit</button>
+                    <div class="bouton">
+                        <button class="btn btn-primary btn-lg rounded" name="submit" value="Submit" type="submit" @click="login($event)">Log in</button>
                     </div>
                 </div>
-
-
-
-
             </form>
+            
         </div>
 
     </div>
@@ -36,6 +33,7 @@
 
 <script>
     import axios from 'axios';
+    import auth from '@/utils/auth.js'
     export default {
         name: 'login',
         data() {
@@ -53,8 +51,10 @@
         },
         methods: {
             login() {
-                axios.post('http://localhost:8181/api/account/login', this.form)
+                axios.post('http://localhost:8181/api/login', this.form)
                     .then(response => {
+                        auth.setLocalToken(response.data);
+                        this.$router.push({ path: `/profil` });
                         console.log('gg', response);
                     })
                     .catch(error => {

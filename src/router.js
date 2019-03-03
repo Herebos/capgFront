@@ -2,6 +2,7 @@ import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import auth from '@/utils/auth.js'
 
 
 
@@ -68,13 +69,33 @@ export default new Router({
         {
             path: '/login',
             name: 'login',
+            beforeEnter: (to, from, next) => {
+                if (auth.getLocalToken()) next("/profil");
+                else next();
+              },
             component: () => import('./views/Login.vue'),
 
     },
         {
             path: '/profil',
             name: 'profil',
+            beforeEnter: (to, from, next) => {
+                if (!auth.getLocalToken()) next("/login");
+                else next();
+              },
             component: () => import('./views/Profil.vue'),
-  },
-  ]
+            children: [
+                {
+                    path: "edit",
+                    name: "editInfo",
+                    component: () => import("./components/CompProfilEdit.vue")
+                        },
+                {
+                    path: "profilevent",
+                    name: "profilEvent",
+                    component: () => import("./components/CompProfilEvent.vue")
+                        },
+                    ]
+                },
+            ]
 })

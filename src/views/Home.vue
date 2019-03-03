@@ -1,7 +1,9 @@
 <template>
     <div class="home">
         <img alt="Vue logo" style="width: 850px; padding-top: 20px;" src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/logo.svg">
-        <index :msg="msg" />
+        
+        <index />
+        
         <h3>Que voulez-faire ?</h3>
 
         <div class="nani">
@@ -23,16 +25,15 @@
 </template>
 
 <script>
-    import Index from '@/components/CompIndex.vue'
+    import index from '@/components/CompIndex.vue'
 
     export default {
         name: 'home',
         components: {
-            Index
+            index
         },
         data() {
             return {
-                msg: '',
             }
         }
     }

@@ -168,8 +168,8 @@
                 console.log(this.form)
                 console.log("En attente de post...")
                 //                'http://httpbin.org/post'
-                axios.post('http://10.65.12.107:8181/api/account/register', this.form).then((response) => {
-                        console.log('Bien ouej =>', response);
+                axios.post('api/users', this.form).then((response) => {
+                        console.log('user create =>', response);
                         //this.$router.push("/vueprojet");
                     })
                     .catch((response) => {
