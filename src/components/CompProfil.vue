@@ -56,7 +56,7 @@
         background-image: linear-gradient(to bottom, #00A6FF, #006DA8, #005380);
         flex: 2;
         height: 40em;
-        margin-top: 54.5px;
+        margin-top: 53.5px;
     }
 
     ul,
