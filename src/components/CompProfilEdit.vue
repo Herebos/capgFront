@@ -1,112 +1,93 @@
 <template>
-  <div class="infos">
-    <h2 class="editprofil">Éditer mon profil</h2>
-    <hr>
-    <div>
-      <div class="form-group">
-        <span>Entity: {{user.entityCap.name}}</span>
-        <input
-          type="text"
-          v-model="user.entityCap.name"
-          v-if="isEditing"
-          @keyup.enter="$emit('update')"
-        >
-      </div>
-      <div class="form-group">
-        <span>Nom: {{user.name}}</span>
-        <input type="text" v-model="user.name" v-if="isEditing" @keyup.enter="$emit('update')">
-      </div>
-
-      <div class="form-group">
-        <span>Email: {{user.email}}</span>
-        <input type="email" v-model="user.email" v-if="isEditing" @keyup.enter="$emit('update')">
-      </div>
-
-      <div class="form-group">
-        <span>Prénom: {{user.lastName}}</span>
-        <input type="text" v-model="user.lastName" v-if="isEditing" @keyup.enter="$emit('update')">
-      </div>
-
-      <div class="form-group">
-        <span>Télephone: {{user.phoneNumber}}</span>
-        <input
-          type="tel"
-          v-model="user.phoneNumber"
-          v-if="isEditing"
-          @keyup.enter="$emit('update')"
-        >
-      </div>
-
-      <div class="form-group">
-        <span>Ville: {{user.city.name}}</span>
-        <input type="text" v-model="user.city.name" v-if="isEditing" @keyup.enter="$emit('update')">
-      </div>
-
-      <!--
+    <div class="infos">
+        <h2 class="editprofil">Éditer mon profil</h2>
+        <hr>
+        <div class="text-left" style="margin: auto; width: 70%;">
             <div class="form-group">
-                <label for="Entity">Entity: {{user.entityCap.name}}</label>
-                <input id="Entity" type="text" class="form-control" :value="user.entityCap.name">
+                <span>Entity: {{user.entityCap.name}}</span> <br>
+                <input type="text" v-model="user.entityCap.name" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
-      -->
-      <button @click="edit()" class="btn btn-primary btn-lg rounded">Valider</button>
-    </div>
+            <div class="form-group">
+                <span>Name: {{user.name}}</span> <br>
+                <input type="text" v-model="user.name" v-if="isEditing" @keyup.enter="$emit('update')">
+            </div>
 
-    {{user}}
-  </div>
+            <div class="form-group">
+                <span>Surname: {{user.lastName}}</span> <br>
+                <input type="text" v-model="user.lastName" v-if="isEditing" @keyup.enter="$emit('update')">
+            </div>
+
+            <div class="form-group">
+                <span>Email: {{user.email}}</span> <br>
+                <input type="email" v-model="user.email" v-if="isEditing" @keyup.enter="$emit('update')">
+            </div>
+
+            <div class="form-group">
+                <span>Phone: {{user.phoneNumber}}</span> <br>
+                <input type="tel" v-model="user.phoneNumber" v-if="isEditing" @keyup.enter="$emit('update')">
+            </div>
+
+            <div class="form-group">
+                <span>City: {{user.city.name}}</span> <br>
+                <input type="text" v-model="user.city.name" v-if="isEditing" @keyup.enter="$emit('update')">
+            </div>
+
+
+            <button @click="edit()" class="btn btn-primary btn-lg rounded">Valider</button>
+        </div>
+    </div>
 </template>
 
 <script>
-import axios from "axios";
-export default {
-  name: "editInfo",
-  data() {
-    return {
-      user: [],
-    };
-  },
-  methods: {
-    onLoad() {
-      axios
-        .get("/api/users/current")
-        .then(response => {
-          this.user = response.data;
-          console.log("Axios Get", this.user);
-        })
-        .catch(response => {
-          // this.user= response.data
-          console.log("null", response);
-        });
-    },
-    edit() {
-      //e.preventDefault();
-      console.log("en attente...", this.user);
-      axios
-        .put("/api/users/", this.user)
-        .then(response => {
-          //console.log(this.user, response);
-          console.log("gg2", response);
-        })
-        .catch(response => {
-          console.log("nul", response);
-        });
+    import axios from 'axios'
+    export default {
+        name: 'editInfo',
+        data() {
+            return {
+                user: [],
+            }
+        },
+        methods: {
+            onLoad() {
+                console.log('ici')
+                axios.get('http://192.168.0.40:8181/api/users/current').then((response) => {
+                        this.user = response.data;
+                        console.log("gg", this.user);
+                    })
+                    .catch((response) => {
+                        // this.user= response.data
+                        console.log("null", response);
+                    });
+            },
+            edit() {
+                //e.preventDefault();
+                console.log('en attente...')
+                axios.put('http://192.168.0.40:8181/api/users/', this.user).then((response) => {
+                        console.log("gg2", response);
+                    })
+                    .catch((response) => {
+                        this.user = response.data
+                        console.log("nul", response);
+                    });
+            },
+        },
+        mounted() {
+            this.onLoad();
+            this.isEditing = true;
+        }
     }
-  },
-  mounted() {
-    this.onLoad();
-    this.isEditing = true;
-  }
-};
+
 </script>
 
 
 <style>
-.infos {
-  flex: 10;
-  top: 5%;
-  position: relative;
-}
+    .infos {
+        flex: 10;
+        top: 5%;
+        position: relative;
+    }
 
-/*
+    /*
     span {
         padding: 10px;
         font-weight: bold;
@@ -118,8 +99,9 @@ export default {
     }
 */
 
-hr {
-  height: 1px;
-  background: #005380;
-}
+    hr {
+        height: 1px;
+        background: #005380;
+    }
+
 </style>

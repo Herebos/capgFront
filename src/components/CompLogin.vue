@@ -3,29 +3,34 @@
         <div class="container">
 
 
-
             <form @submit="$event.preventDefault()">
                 <div class="formLogin">
                     <div class="form-group">
                         <label for="email">Email :</label>
-                        <input id="email" class="form-control" type="email" v-model="form.email" required placeholder="Enter email">
+                        <input id="email" class="form-control" type="email" v-model="form.email" required
+                               placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label for="password">Password :</label>
                         <div class="input-group mb-3">
-                            <input id="password" class="form-control" :type="type" v-model="form.password" required placeholder="Enter password" aria-describedby="passwordHelp">
-                            <div class="input-group-append"><a class="eye" @click="type === 'text' ? type = 'password' : type = 'text'">
-                                    <!--Ternary function-->
-                                    <font-awesome-icon :icon="type === 'text' ? 'eye' : 'eye-slash'" /></a></div>
+                            <input id="password" class="form-control" :type="type" v-model="form.password" required
+                                   placeholder="Enter password" aria-describedby="passwordHelp">
+                            <div class="input-group-append"><a class="eye"
+                                                               @click="type === 'text' ? type = 'password' : type = 'text'">
+                                <!--Ternary function-->
+                                <font-awesome-icon :icon="type === 'text' ? 'eye' : 'eye-slash'"/>
+                            </a></div>
                             <!--Ternary function-->
                         </div>
                     </div>
                     <div class="bouton">
-                        <button class="btn btn-primary btn-lg rounded" name="submit" value="Submit" type="submit" @click="login($event)">Log in</button>
+                        <button class="btn btn-primary btn-lg rounded" name="submit" value="Submit" type="submit"
+                                @click="login($event)">Submit
+                        </button>
                     </div>
                 </div>
             </form>
-            
+
         </div>
 
     </div>
@@ -39,7 +44,7 @@
         data() {
             return {
                 icon: 'eye',
-                type:'password',
+                type: 'password',
                 btnText: 'Show Password',
                 password: '',
                 form: {
@@ -88,10 +93,8 @@
     }
 
 
-
-
     /* telephone */
-    @media only screen and (max-device-width : 640px) {
+    @media only screen and (max-device-width: 640px) {
         .image {
             display: none;
         }
@@ -103,7 +106,7 @@
     }
 
     /* tablette */
-    @media only screen and (max-device-width : 1024px) {
+    @media only screen and (max-device-width: 1024px) {
 
         main {
             display: flex;

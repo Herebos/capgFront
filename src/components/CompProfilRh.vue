@@ -2,21 +2,17 @@
     <div id="blockcontainer">
 
         <div class="dashboard">
-            <router-link :to="{name: 'profil'}">
-                <font-awesome-icon style="cursor: pointer;" icon="user-circle" class="profilIcon" />
+            <router-link :to="{name: 'profilRh'}">
+                <font-awesome-icon style="cursor: pointer;" icon="user-circle" class="profilIcon"/>
             </router-link>
             <ul>
                 <li>
-                    <font-awesome-icon class="icon" icon="calendar-alt" />
-                    <router-link :to="{name: 'profilEvent'}">My Events</router-link>
+                    <font-awesome-icon class="icon" icon="calendar-alt"/>
+                    <router-link :to="{name: 'gestionDesComptes'}"> Gestion des comptes</router-link>
                 </li>
                 <li>
-                    <font-awesome-icon class="icon" icon="edit" />
-                    <router-link :to="{name: 'editInfo'}">Edit my Info</router-link>
-                </li>
-                <li>
-                    <font-awesome-icon class="icon" icon="cog" /><a href="">Account Parameters</a>
-                    
+                    <font-awesome-icon class="icon" icon="project-diagram"/>
+                    <router-link :to="{name: 'gestionDesprojets'}">Gestion des projets</router-link>
                 </li>
             </ul>
         </div>
@@ -28,24 +24,24 @@
 </template>
 <script>
     export default {
-        name: 'profil',
+        name: 'profilRh',
         data() {
             return {
 
             }
         },
-        methods: {
-
-        },
-
     }
 
+
 </script>
+
+
 <style scoped>
+
     .icon {
         margin-right: 10px;
     }
-    
+
     #blockcontainer {
         display: flex;
         margin-top: 15px;
@@ -69,7 +65,7 @@
         background-color: skyblue;
     }
 
-    ul>li {
+    ul > li {
         list-style: none;
         font-size: 25px;
         text-align: center;
@@ -85,7 +81,5 @@
         font-size: 10vw;
         color: #FFFFFF;
     }
-
-
 
 </style>

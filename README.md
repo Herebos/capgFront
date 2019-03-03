@@ -1,7 +1,10 @@
 # capgemini
 
 ```
-Project use Boostrap-vue, moment-vue, vue-ressource and VueX
+Project use Boostrap-vue, moment-vue, vue-ressource, axios and Auth
+```
+```
+For back, see Momise92 "Capgemini" repo
 ```
 
 ## Project setup

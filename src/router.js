@@ -17,7 +17,7 @@ export default new Router({
             path: '/',
             name: 'home',
             component: Home
-    },
+        },
         {
             path: '/about',
             name: 'about',
@@ -25,7 +25,7 @@ export default new Router({
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
             component: () => import( /* webpackChunkName: "about" */ './views/About.vue')
-    },
+        },
         {
             path: '/inscription',
             name: 'inscription',
@@ -33,7 +33,7 @@ export default new Router({
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
             component: () => import( /* webpackChunkName: "about" */ './views/Inscription.vue')
-    },
+        },
         {
             path: '/creeprojet',
             name: 'createProject',
@@ -41,7 +41,7 @@ export default new Router({
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
             component: () => import( /* webpackChunkName: "about" */ './views/CreeProjet.vue')
-    },
+        },
         {
             path: '/vueprojet',
             name: 'vueProject',
@@ -49,7 +49,7 @@ export default new Router({
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
             component: () => import( /* webpackChunkName: "about" */ './views/VueProjet.vue')
-    },
+        },
         {
             path: '/cgu',
             name: 'conditionsGeneraldUtilisation',
@@ -57,7 +57,7 @@ export default new Router({
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
             component: () => import( /* webpackChunkName: "about" */ './views/Cgu.vue')
-    },
+        },
         {
             path: '/dp',
             name: 'donneesPersonnelles',
@@ -65,37 +65,60 @@ export default new Router({
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
             component: () => import( /* webpackChunkName: "about" */ './views/Dp.vue')
-    },
+        },
         {
             path: '/login',
             name: 'login',
             beforeEnter: (to, from, next) => {
                 if (auth.getLocalToken()) next("/profil");
                 else next();
-              },
+            },
             component: () => import('./views/Login.vue'),
 
-    },
+        },
         {
             path: '/profil',
             name: 'profil',
             beforeEnter: (to, from, next) => {
                 if (!auth.getLocalToken()) next("/login");
                 else next();
-              },
+            },
             component: () => import('./views/Profil.vue'),
             children: [
                 {
                     path: "edit",
                     name: "editInfo",
                     component: () => import("./components/CompProfilEdit.vue")
-                        },
+                },
                 {
                     path: "profilevent",
                     name: "profilEvent",
                     component: () => import("./components/CompProfilEvent.vue")
-                        },
-                    ]
                 },
             ]
+        },
+        {
+            path: '/profilRh',
+            name: 'profilRh',
+            component: () => import('./views/ProfilRh.vue'),
+            children: [
+                {
+                    path: 'gestionDesComptes',
+                    name: 'gestionDesComptes',
+                    component: () => import('./components/CompRHGestionCompte.vue'),
+                },
+                {
+                    path: 'gestionDesprojets',
+                    name: 'gestionDesprojets',
+                    component: () => import('./components/CompRHGestionProj.vue'),
+
+                },
+            ]
+        },
+        {
+            path: '/confirm',
+            name: 'confirm',
+            component: () => import('./views/Confirm.vue')
+        },
+    ]
 })

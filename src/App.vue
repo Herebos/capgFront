@@ -6,7 +6,9 @@
             <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
             <b-navbar-brand href="">
-                <router-link to="/"><img src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/logo.svg" alt="Capgemini France"></router-link>
+                <router-link to="/"><img
+                        src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/logo.svg"
+                        alt="Capgemini France"></router-link>
             </b-navbar-brand>
 
             <b-collapse is-nav id="nav_collapse">
@@ -18,13 +20,21 @@
                     <b-nav-item-dropdown class="align-text" text="Langue" right no-caret>
                         <template slot="button-content">
                             <p>Langue
-                                <font-awesome-icon icon="chevron-circle-down" />
+                                <font-awesome-icon icon="chevron-circle-down"/>
                             </p>
                         </template>
-                        <b-dropdown-item href="#"><img alt="country flag" class="img-flag" src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/fl/fr.svg"> <span class="hidden-sm-down"> France | FR</span></b-dropdown-item>
-                        <b-dropdown-item href="#"><img alt="country flag" class="img-flag" src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/fl/gb.svg"> <span class="hidden-sm-down"> English | EN</span></b-dropdown-item>
-                        <b-dropdown-item href="#"><img alt="country flag" class="img-flag" src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/fl/de.svg"> <span class="hidden-sm-down"> Germany | DE</span></b-dropdown-item>
-                        <b-dropdown-item href="#"><img alt="country flag" class="img-flag" src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/fl/es.svg"> <span class="hidden-sm-down"> Spanish | ES</span></b-dropdown-item>
+                        <b-dropdown-item href="#"><img alt="country flag" class="img-flag"
+                                                       src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/fl/fr.svg">
+                            <span class="hidden-sm-down"> France | FR</span></b-dropdown-item>
+                        <b-dropdown-item href="#"><img alt="country flag" class="img-flag"
+                                                       src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/fl/gb.svg">
+                            <span class="hidden-sm-down"> English | EN</span></b-dropdown-item>
+                        <b-dropdown-item href="#"><img alt="country flag" class="img-flag"
+                                                       src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/fl/de.svg">
+                            <span class="hidden-sm-down"> Germany | DE</span></b-dropdown-item>
+                        <b-dropdown-item href="#"><img alt="country flag" class="img-flag"
+                                                       src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/fl/es.svg">
+                            <span class="hidden-sm-down"> Spanish | ES</span></b-dropdown-item>
                     </b-nav-item-dropdown>
 
                     <b-nav-item-dropdown right no-caret>
@@ -54,7 +64,13 @@
                             <router-link to="/profil">Mon profil</router-link>
                         </b-dropdown-item>
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
+                            <router-link to="/profilRh">Profil RH</router-link>
+                        </b-dropdown-item>
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive">
                             <router-link to="/login">Login</router-link>
+                        </b-dropdown-item>
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive">
+                            <button class="btn-outline-danger btn"><router-link to="/login" @click="logout">Logout</router-link></button>
                         </b-dropdown-item>
                     </b-nav-item-dropdown>
                 </b-navbar-nav>
@@ -63,15 +79,15 @@
         </b-navbar>
 
 
-
-        <router-view />
+        <router-view/>
 
         <!--footer-->
         <footer class="footer container-full">
             <div class="container">
                 <div class="footer__top row">
                     <div class="footer__logo col-md-4 hidden-lg-down">
-                        <img alt="Logo de Capgemini" src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/logo.svg">
+                        <img alt="Logo de Capgemini"
+                             src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/logo.svg">
                     </div>
                     <nav class="footer__nav col-12 col-xl-8">
                         <div class="row">
@@ -86,16 +102,24 @@
                                 <li><a href="#" class="">Nous trouver</a></li>
                             </ul>
                             <ul class="col-6 col-md-3">
-                                <li><router-link to="/dp">Données personnelles</router-link></li>
-                                <li><router-link to="/cgu">Conditions générales d’utilisation</router-link></li>
+                                <li>
+                                    <router-link to="/dp">Données personnelles</router-link>
+                                </li>
+                                <li>
+                                    <router-link to="/cgu">Conditions générales d’utilisation</router-link>
+                                </li>
                             </ul>
                             <div class="col-6 col-md-3">
 
                                 <h3 class="footer__title">Nos marques:</h3>
 
                                 <ol>
-                                    <li><a href="#" class="capconsult"><img alt="Capgemini Invent Logotype" src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/capgemini-invent.svg"></a></li>
-                                    <li><a href="#" class="sogeti" target="_blank"><img alt="Sogeti by Capgemini" src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/sogeti-by-capgemini.svg" style="margin: auto;"></a></li>
+                                    <li><a href="#" class="capconsult"><img alt="Capgemini Invent Logotype"
+                                                                            src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/capgemini-invent.svg"></a>
+                                    </li>
+                                    <li><a href="#" class="sogeti" target="_blank"><img alt="Sogeti by Capgemini"
+                                                                                        src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/sogeti-by-capgemini.svg"
+                                                                                        style="margin: auto;"></a></li>
                                 </ol>
                             </div>
                         </div>
@@ -109,8 +133,8 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
                                         <title>Facebook icon</title>
                                         <g fill="none" fill-rule="evenodd">
-                                            <rect width="36" height="36" rx="3" />
-                                            <path d="M16.572 28.558H20.1v-9.515h2.646l.523-2.973H20.1v-2.154c0-.695.458-1.424 1.111-1.424h1.802V9.52h-2.208v.014c-3.454.123-4.164 2.087-4.225 4.15h-.007v2.387h-1.764v2.973h1.764v9.515z" />
+                                            <rect width="36" height="36" rx="3"/>
+                                            <path d="M16.572 28.558H20.1v-9.515h2.646l.523-2.973H20.1v-2.154c0-.695.458-1.424 1.111-1.424h1.802V9.52h-2.208v.014c-3.454.123-4.164 2.087-4.225 4.15h-.007v2.387h-1.764v2.973h1.764v9.515z"/>
                                         </g>
                                     </svg>
                                 </a>
@@ -120,8 +144,8 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
                                         <title>Twitter icon</title>
                                         <g fill="none" fill-rule="evenodd">
-                                            <rect width="36" height="36" rx="3" />
-                                            <path d="M27.76 11.757c-.538.344-1.772.844-2.38.844v.001a3.816 3.816 0 0 0-6.477 3.487c-2.859-.075-5.984-1.507-7.866-3.959-1.157 2.003-.156 4.23 1.157 5.041-.45.034-1.277-.051-1.666-.431-.026 1.329.613 3.09 2.943 3.729-.449.241-1.243.172-1.588.12.12 1.123 1.692 2.59 3.41 2.59-.612.708-2.916 1.992-5.502 1.584a11.464 11.464 0 0 0 5.969 1.687c6.155 0 10.936-4.989 10.679-11.143-.002-.007-.002-.014-.002-.021l.002-.048c0-.02-.002-.038-.003-.056a6.582 6.582 0 0 0 1.85-1.953c-.312.171-1.246.515-2.116.6.558-.301 1.385-1.288 1.59-2.072" />
+                                            <rect width="36" height="36" rx="3"/>
+                                            <path d="M27.76 11.757c-.538.344-1.772.844-2.38.844v.001a3.816 3.816 0 0 0-6.477 3.487c-2.859-.075-5.984-1.507-7.866-3.959-1.157 2.003-.156 4.23 1.157 5.041-.45.034-1.277-.051-1.666-.431-.026 1.329.613 3.09 2.943 3.729-.449.241-1.243.172-1.588.12.12 1.123 1.692 2.59 3.41 2.59-.612.708-2.916 1.992-5.502 1.584a11.464 11.464 0 0 0 5.969 1.687c6.155 0 10.936-4.989 10.679-11.143-.002-.007-.002-.014-.002-.021l.002-.048c0-.02-.002-.038-.003-.056a6.582 6.582 0 0 0 1.85-1.953c-.312.171-1.246.515-2.116.6.558-.301 1.385-1.288 1.59-2.072"/>
                                         </g>
                                     </svg>
                                 </a>
@@ -131,8 +155,8 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
                                         <title>LinkedIn icon</title>
                                         <g fill="none" fill-rule="evenodd">
-                                            <rect width="36" height="36" rx="3" />
-                                            <path d="M11.622 14.125c1.31 0 2.373-.97 2.373-2.166 0-1.198-1.063-2.168-2.373-2.168-1.312 0-2.375.97-2.375 2.168 0 1.197 1.063 2.166 2.375 2.166M9.791 28.056h4.258V15.775H9.791zM20.026 21.225c0-1.408.666-2.785 2.26-2.785 1.593 0 1.985 1.377 1.985 2.752v6.707h4.239v-6.981c0-4.851-2.867-5.687-4.631-5.687-1.762 0-2.734.596-3.853 2.04v-1.653h-4.251v12.281h4.251v-6.674z" />
+                                            <rect width="36" height="36" rx="3"/>
+                                            <path d="M11.622 14.125c1.31 0 2.373-.97 2.373-2.166 0-1.198-1.063-2.168-2.373-2.168-1.312 0-2.375.97-2.375 2.168 0 1.197 1.063 2.166 2.375 2.166M9.791 28.056h4.258V15.775H9.791zM20.026 21.225c0-1.408.666-2.785 2.26-2.785 1.593 0 1.985 1.377 1.985 2.752v6.707h4.239v-6.981c0-4.851-2.867-5.687-4.631-5.687-1.762 0-2.734.596-3.853 2.04v-1.653h-4.251v12.281h4.251v-6.674z"/>
                                         </g>
                                     </svg>
                                 </a>
@@ -143,7 +167,8 @@
                         <p>Tous droits réservés Team Cracotte. <span>Copyright &copy; 2019</span></p>
                     </div>
                     <div class="footer__logo col-12 hidden-xl-up">
-                        <img alt="Logo de Capgemini" src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/logo.svg">
+                        <img alt="Logo de Capgemini"
+                             src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/logo.svg">
                     </div>
                 </div>
             </div>
@@ -157,12 +182,21 @@
 <script>
     import 'bootstrap/dist/css/bootstrap.css'
     import 'bootstrap-vue/dist/bootstrap-vue.css'
+    import auth from '../utils/auth.js';
+
     export default {
         data() {
             return {
                 isActive: false,
             };
-        }
+        },
+        methods: {
+            logout() {
+                auth.deleteLocalToken();
+                console.log('gg');
+            },
+        },
+
     }
 
 </script>
@@ -175,7 +209,7 @@
         background-color: white;
         border-top: 1px solid #ececec;
     }
-    
+
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
