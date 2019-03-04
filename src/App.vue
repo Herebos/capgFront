@@ -51,7 +51,7 @@
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
                             <router-link to="/">Home</router-link>
                         </b-dropdown-item>
-                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="islogged">
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="!isLoggedIn">
                             <router-link to="/inscription">Sign In</router-link>
                         </b-dropdown-item>
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
@@ -66,10 +66,10 @@
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
                             <router-link to="/profilRh">Profil HR</router-link>
                         </b-dropdown-item>
-                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="islogged">
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="!isLoggedIn">
                             <router-link to="/login">Sign Up</router-link>
                         </b-dropdown-item>
-                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="!islogged">
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="isLoggedIn">
                             <button class="btn-outline-danger btn" @click="logout">Logout</button>
                         </b-dropdown-item>
                     </b-nav-item-dropdown>
@@ -195,9 +195,6 @@
                 auth.logUserOut(this);
                 console.log('gg');
             },
-            islogged(){
-                auth.isLoggedIn()
-            }
         },
 
     }
