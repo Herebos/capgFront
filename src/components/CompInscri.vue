@@ -7,9 +7,9 @@
             <div class="role form-group">
                 <select class="form-control" id="statusInput" v-model="form.status" name="status">
                     <option :value="status">Please select an option</option>
-                    <option value="salarie">Salarié</option>
+                    <option value="salarie">Collaborator</option>
                     <option value="association">Association</option>
-                    <option value="rh">Équipe RH</option>
+                    <option value="rh">HR Team</option>
                 </select>
                 <div>Selected: <strong>{{ form.status }}</strong></div>
             </div>
@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="form-group" v-if="form.status === 'salarie'">
-                    <label for="name">Nom : <span class="requis">*</span></label>
+                    <label for="name">Name : <span class="requis">*</span></label>
                     <input id="name" class="form-control" type="text" v-model="form.name" required placeholder="Enter name">
                 </div>
 
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="form-group" v-if="form.status === 'rh'">
-                    <label for="name">Rh Team name : <span class="requis">*</span></label>
+                    <label for="name">HR Team name : <span class="requis">*</span></label>
                     <input id="name" class="form-control" type="text" v-model="form.name" required placeholder="Enter name">
                 </div>
 
@@ -67,14 +67,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="phoneNumber">Tél : <span class="requis">*</span></label>
+                    <label for="phoneNumber">Phone Number : <span class="requis">*</span></label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">+33</span>
                         </div>
                         <input id="phoneNumber" class="form-control" type="tel" v-model="form.phoneNumber" required placeholder="Enter ton 06" pattern="[0-9]{10}" aria-describedby="phoneHelp">
                     </div>
-                    <small id="phoneHelp" class="form-text text-muted">ex: 612345678</small>
+                    <small id="phoneHelp" class="form-text text-muted">ex: 0123456789</small>
                 </div>
 
 

@@ -1,8 +1,9 @@
-import Vue from 'vue'
-import BootstrapVue from 'bootstrap-vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
-import auth from '../utils/auth.js'
+import Vue from 'vue';
+import BootstrapVue from 'bootstrap-vue';
+import Router from 'vue-router';
+import Home from './views/Home.vue';
+import auth from '@/utils/auth.js';
+
 
 
 Vue.use(Router);
@@ -120,4 +121,4 @@ export default new Router({
             component: () => import('./views/Confirm.vue')
         },
     ]
-})
+});
