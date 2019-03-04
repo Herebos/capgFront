@@ -42,7 +42,7 @@
         methods: {
             onLoad() {
                 console.log('En attente de get...')
-                axios.get('/api/events/1').then((response) => { //TODO change http
+                axios.get('/api/usrers/current').then((response) => { //TODO change http
                         this.events = response.data;
                         console.log("gg", response);
                     })

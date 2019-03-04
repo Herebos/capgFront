@@ -51,7 +51,7 @@
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
                             <router-link to="/">Home</router-link>
                         </b-dropdown-item>
-                        <b-dropdown-item href="" v-on:click="isActive = !isActive">
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="!islogged">
                             <router-link to="/inscription">Sign Up</router-link>
                         </b-dropdown-item>
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
@@ -195,6 +195,9 @@
                 auth.logUserOut(this);
                 console.log('gg');
             },
+            islogged(){
+                auth.isLoggedIn()
+            }
         },
 
     }

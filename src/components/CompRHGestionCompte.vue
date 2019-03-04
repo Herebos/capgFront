@@ -74,7 +74,7 @@ import axios from 'axios';
 
     .card {
         width: 30%;
-    //max-width: 35%;
+    /* max-width: 35%; */
     }
 
 </style>

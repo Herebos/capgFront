@@ -34,10 +34,8 @@
                 <div class="form-group mb-3">
                     <label for="city">City : <span class="requis">*</span></label>
                     <select class="form-control" v-model="form.city.name" id="city" name="city" required>
-                        <option :value="city">Please select an option</option>
-                        <option value="Puteaux">Puteaux</option>
-                        <option value="Sarcelles">Sarcelles</option>
-                        <option value="Puteaux">Lille</option>
+                        <option value="">Please select an option</option>
+                        <option v-for="city in cities" :key="city.id">{{city.name}}</option>
                     </select>
                 </div>
 
@@ -50,11 +48,8 @@
                         <div class="col">
                             <label for="division">Entity:</label>
                             <select class="form-control" v-model="form.entityCap.name" id="entityCap" name="entityCap">
-                                <option :value="entityCap">Please select an option</option>
-                                <option value="FS">FS</option>
-                                <option value="Apps">Apps</option>
-                                <option value="Sogeti ATS">Sogeti ATS</option>
-                                <option value="Sogeti HiTech">Sogeti Hi-Tech</option>
+                                <option value="">Please select an option</option>
+                                <option v-for="entity in entityCap" :key="entity.id">{{entity.name}}</option>
                             </select>
                         </div>
                     </div>
@@ -100,8 +95,8 @@
         data() {
             return {
                 type: '', //
-                city: '', // outside of <form> for v-if=""
-                entityCap: '', //
+                cities: [], // outside of <form> for v-if=""
+                entityCap: [], //
                 form: {
                     name: '',
                     description: '',
@@ -118,6 +113,23 @@
             }
         },
         methods: {
+            onLoad() {
+                axios.get('/api/cities').then((response) => { //TODO change http
+                        this.cities = response.data;
+                        console.log("cities", this.cities);
+                    })
+                    .catch((response) => {
+                        this.cities= response.data
+                    });
+
+                axios.get('/api/entities').then((response) => { //TODO change http
+                        this.entityCap = response.data;
+                        console.log("Entities", this.entityCap);
+                    })
+                    .catch((response) => {
+                        this.entityCap= response.data
+                    });
+            },
             onSubmit(e) {
                 e.preventDefault();
                 console.log("En attente de post...")
@@ -130,7 +142,10 @@
                         console.log('perdu =>', response);
                     });
             },
-        }
+        },
+         mounted() {
+            this.onLoad();
+        },
     }
 
 </script>

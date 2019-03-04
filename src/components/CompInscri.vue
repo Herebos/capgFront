@@ -40,7 +40,7 @@
 
                 <div class="form-group" v-if="form.status === 'salarie'">
                     <label for="lastName">Surname : <span class="requis">*</span></label>
-                    <input id="name" class="form-control" type="text" v-model="form.lastName" required
+                    <input id="lastName" class="form-control" type="text" v-model="form.lastName" required
                            placeholder="Enter lastname">
                 </div>
 
@@ -93,10 +93,8 @@
                 <div class="form-group mb-3">
                     <label for="city">City : <span class="requis">*</span></label>
                     <select class="form-control" v-model="form.city" id="city" name="city">
-                        <option :value="city">Please select an option</option>
-                        <option value="Puteaux">Puteaux</option>
-                        <option value="Sarcelles">Sarcelles</option>
-                        <option value="Sarcelles">Lille</option>
+                        <option value="">Please select an option</option>
+                        <option v-for="city in cities" :key="city.id">{{city.name}}</option>
                     </select>
                 </div>
 
@@ -113,11 +111,8 @@
                     <div class="form-group">
                         <label for="entityCap">Entity : <span class="requis">*</span></label>
                         <select class="form-control" v-model="form.entityCap" id="entityCap" name="entityCap">
-                            <option :value="entityCap">Please select an option</option>
-                            <option value="FS">FS</option>
-                            <option value="Apps">Apps</option>
-                            <option value="Sogeti ATS">Sogeti ATS</option>
-                            <option value="Sogeti hi-tech">Sogeti Hi-Tech</option>
+                            <option value="">Please select an option</option>
+                            <option v-for="entity in entityCap" :key="entity.id">{{entity.name}}</option>
                         </select>
                     </div>
 
@@ -160,8 +155,8 @@
                 type: 'password',
                 btnText: 'Show Password',
                 status: '', //
-                entityCap: '', //Bind à l'extérieur pour le v-if
-                city: '', //
+                entityCap: [], //Bind à l'extérieur pour le v-if
+                cities: [], //
                 form: {
                     email: '',
                     name: '',
@@ -178,6 +173,23 @@
             }
         },
         methods: {
+            onLoad() {
+                axios.get('/api/cities').then((response) => { //TODO change http
+                        this.cities = response.data;
+                        console.log("gg", this.cities);
+                    })
+                    .catch((response) => {
+                        this.cities= response.data
+                    });
+
+                axios.get('/api/entities').then((response) => { //TODO change http
+                        this.entityCap = response.data;
+                        console.log("Entities", this.entityCap);
+                    })
+                    .catch((response) => {
+                        this.entityCap= response.data
+                    });
+            },
             onSubmit(e) {
                 e.preventDefault();
                 console.log(this.form);
@@ -192,6 +204,9 @@
                         console.log('perdu =>', response);
                     });
             },
+        },
+        mounted() {
+            this.onLoad();
         },
     }
 

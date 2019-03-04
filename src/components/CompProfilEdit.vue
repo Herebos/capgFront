@@ -17,11 +17,8 @@
                 <span>Entity: {{user.entityCap.name}}</span> <br>
                 <!--<input type="text" v-model="user.entityCap.name" v-if="isEditing" @keyup.enter="$emit('update')">-->
                 <select class="form-control" v-model="user.entityCap.name" id="entityCap" name="entityCap" v-if="isEditing" @keyup.enter="$emit('update')">
-                    <option :value="entityCap">Please select an option</option>
-                    <option value="FS">FS</option>
-                    <option value="Apps">Apps</option>
-                    <option value="Sogeti ATS">Sogeti ATS</option>
-                    <option value="Sogeti HiTech">Sogeti Hi-Tech</option>
+                    <option value="">Please select an option</option>
+                    <option v-for="entity in entityCap" :key="entity.id">{{entity.name}}</option>
                 </select>
             </div>
 
@@ -37,7 +34,11 @@
 
             <div class="form-group">
                 <span>City: {{user.city.name}}</span> <br>
-                <input type="text" v-model="user.city.name" v-if="isEditing" @keyup.enter="$emit('update')">
+                <!-- <input type="text" v-model="user.city.name" v-if="isEditing" @keyup.enter="$emit('update')"> -->
+                <select class="form-control" v-model="user.city.name" id="entityCap" name="city" v-if="isEditing" @keyup.enter="$emit('update')">
+                    <option value="">Please select an option</option>
+                    <option v-for="city in cities" :key="city.id">{{city.name}}</option>
+                </select>
             </div>
 
 
@@ -52,7 +53,9 @@
         name: 'editInfo',
         data() {
             return {
+                entityCap:[],
                 user: [],
+                cities:[]
             }
         },
         methods: {
@@ -65,6 +68,20 @@
                     .catch((response) => {
                         // this.user= response.data
                         console.log("null", response);
+                    });
+                     axios.get('/api/entities').then((response) => { //TODO change http
+                        this.entityCap = response.data;
+                        console.log("Entities", this.entityCap);
+                    })
+                    .catch((response) => {
+                        this.entityCap= response.data
+                    });
+                    axios.get('/api/cities').then((response) => { //TODO change http
+                        this.cities = response.data;
+                        console.log("gg", this.cities);
+                    })
+                    .catch((response) => {
+                        this.cities= response.data
                     });
             },
             edit() {
