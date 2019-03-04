@@ -1,7 +1,7 @@
 <template>
     <div class="creeProjet">
 
-        <h1>Créer un Projet !</h1>
+        <h1>Create a Project/Event !</h1>
 
     <creeProj />
 

@@ -98,7 +98,7 @@
 
                 <div v-if="form.status != 'association'">
                     <div class="form-group">
-                        <label for="entityCap">Divisions : <span class="requis">*</span></label>
+                        <label for="entityCap">Entity : <span class="requis">*</span></label>
                         <select class="form-control" v-model="form.entityCap" id="entityCap" name="entityCap">
                             <option :value="entityCap">Please select an option</option>
                             <option value="Apps">FS</option>

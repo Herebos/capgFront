@@ -11,12 +11,12 @@
                     <p class="card-text">{{ event.description }} <br> {{ event.city.name }}</p>
                 </div>
                 <div class="card-body" style="border-bottom: 1px solid #ececec">
-                    <p class="card-text">Nombres de places et Entitées :</p> <p class="card-text"> {{ event.placeNumber }} | {{ event.entityCap.name }} </p>
-                    <p class="card-text">Début : {{ event.startDate | moment("MMMM Do YYYY") }} <br> Fin : {{ event.endDate | moment("MMMM Do YYYY") }} </p>
+                    <p class="card-text">Number of collaborators & Entities :</p> <p class="card-text"> {{ event.placeNumber }} | {{ event.entityCap.name }} </p>
+                    <p class="card-text">Beginning date : {{ event.startDate | moment("MMMM Do YYYY") }} <br> End date : {{ event.endDate | moment("MMMM Do YYYY") }} </p>
                 </div>
                 <div class="card-body" v-if="event.project != null">
 
-                    <p class="card-text"> Projet lié à l'événement : <strong> {{ event.project.name }} </strong><br>
+                    <p class="card-text"> Project linked to the Event : <strong> {{ event.project.name }} </strong><br>
                         {{ event.project.description }}</p>
                 </div>
 

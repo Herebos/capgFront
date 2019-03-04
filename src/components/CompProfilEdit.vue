@@ -1,12 +1,8 @@
 <template>
     <div class="infos">
-        <h2 class="editprofil">Éditer mon profil</h2>
+        <h2 class="editprofil">Edit my profil</h2>
         <hr>
         <div class="text-left" style="margin: auto; width: 70%;">
-            <div class="form-group">
-                <span>Entity: {{user.entityCap.name}}</span> <br>
-                <input type="text" v-model="user.entityCap.name" v-if="isEditing" @keyup.enter="$emit('update')">
-            </div>
             <div class="form-group">
                 <span>Name: {{user.name}}</span> <br>
                 <input type="text" v-model="user.name" v-if="isEditing" @keyup.enter="$emit('update')">
@@ -18,12 +14,24 @@
             </div>
 
             <div class="form-group">
+                <span>Entity: {{user.entityCap.name}}</span> <br>
+                <!--<input type="text" v-model="user.entityCap.name" v-if="isEditing" @keyup.enter="$emit('update')">-->
+                <select class="form-control" v-model="user.entityCap.name" id="entityCap" name="entityCap" v-if="isEditing" @keyup.enter="$emit('update')">
+                    <option :value="entityCap">Please select an option</option>
+                    <option value="FS">FS</option>
+                    <option value="Apps">Apps</option>
+                    <option value="Sogeti ATS">Sogeti ATS</option>
+                    <option value="Sogeti HiTech">Sogeti Hi-Tech</option>
+                </select>
+            </div>
+
+            <div class="form-group">
                 <span>Email: {{user.email}}</span> <br>
                 <input type="email" v-model="user.email" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
 
             <div class="form-group">
-                <span>Phone: {{user.phoneNumber}}</span> <br>
+                <span>Phone number: {{user.phoneNumber}}</span> <br>
                 <input type="tel" v-model="user.phoneNumber" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
 
@@ -33,7 +41,7 @@
             </div>
 
 
-            <button @click="edit()" class="btn btn-primary btn-lg rounded">Valider</button>
+            <button @click="edit()" class="btn btn-primary btn-lg rounded">Submit</button>
         </div>
     </div>
 </template>

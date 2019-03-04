@@ -1,6 +1,6 @@
 <template>
     <div class="vueProjet">
-        <h1>Voir les Projets</h1>
+        <h1>Display Projects/Events</h1>
 
         <div class="containerProj">
 

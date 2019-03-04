@@ -15,12 +15,12 @@
 
             <div v-if="type != ''" class="formProject">
                 <div class="form-group" v-if="type === 'project'">
-                    <label for="name">Nom du Projet: <span class="requis">*</span></label>
+                    <label for="name">Project name: <span class="requis">*</span></label>
                     <input id="name" class="form-control" type="text" v-model="form.name" required placeholder="Enter Project name" maxlength="50">
                 </div>
 
                 <div class="form-group" v-if="type === 'event'">
-                    <label for="name">Nom de l'événement: <span class="requis">*</span></label>
+                    <label for="name">Event name: <span class="requis">*</span></label>
                     <input id="name" class="form-control" type="text" v-model="form.name" required placeholder="Enter Project name">
                 </div>
 
@@ -44,11 +44,11 @@
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-7">
-                            <label for="placeNumber">Nombre de personnes: <span class="requis">*</span></label>
+                            <label for="placeNumber">Number of collaborator: <span class="requis">*</span></label>
                             <input id="placeNumber" type="number" class="form-control" v-model="form.placeNumber" placeholder="nbr" required>
                         </div>
                         <div class="col">
-                            <label for="division">Entité:</label>
+                            <label for="division">Entity:</label>
                             <select class="form-control" v-model="form.entityCap.name" id="entityCap" name="entityCap">
                                 <option :value="entityCap">Please select an option</option>
                                 <option value="FS">FS</option>
@@ -63,11 +63,11 @@
 
                 <!--Metrre en anglais si pb db-->
                 <div class="form-group">
-                    <label for="startDate">Date de début:</label>
+                    <label for="startDate">Beginning date:</label>
                     <input id="startDate" class="form-control" type="date" v-model="form.startDate">
                 </div>
                 <div class="form-group">
-                    <label for="endDate">Date de fin:</label>
+                    <label for="endDate">End date:</label>
                     <input id="endDate" class="form-control" type="date" v-model="form.endDate">
                 </div>
 
@@ -100,10 +100,9 @@
         data() {
             return {
                 type: '', //
-                city: '', // exterior of form for v-if
+                city: '', // outside of <form> for v-if=""
                 entityCap: '', //
                 form: {
-                    //type: null,
                     name: '',
                     description: '',
                     city: {
@@ -115,7 +114,6 @@
                     },
                     startDate: '',
                     endDate: '',
-                    //checked: [],
                 },
             }
         },
