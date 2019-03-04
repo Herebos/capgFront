@@ -6,8 +6,8 @@
             <div class="type">
                 <select id="typeInput" v-model="type" class="form-control" name="type">
                     <option :value="type">Please select an option</option>
-                    <option value="project">Projet</option>
-                    <option value="event">Événement</option>
+                    <option value="project">Project</option>
+                    <option value="event">Event</option>
                 </select>
                 <div>Selected: <strong>{{ type }}</strong></div>
             </div>

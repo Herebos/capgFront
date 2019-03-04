@@ -25,16 +25,16 @@
                         </template>
                         <b-dropdown-item href="#"><img alt="country flag" class="img-flag"
                                                        src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/fl/fr.svg">
-                            <span class="hidden-sm-down"> France | FR</span></b-dropdown-item>
+                            <span class="hidden-sm-down"> Français | FR</span></b-dropdown-item>
                         <b-dropdown-item href="#"><img alt="country flag" class="img-flag"
                                                        src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/fl/gb.svg">
-                            <span class="hidden-sm-down"> England | EN</span></b-dropdown-item>
+                            <span class="hidden-sm-down"> English | EN</span></b-dropdown-item>
                         <b-dropdown-item href="#"><img alt="country flag" class="img-flag"
                                                        src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/fl/de.svg">
-                            <span class="hidden-sm-down"> Germany | DE</span></b-dropdown-item>
+                            <span class="hidden-sm-down"> Deutsch | DE</span></b-dropdown-item>
                         <b-dropdown-item href="#"><img alt="country flag" class="img-flag"
                                                        src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/fl/es.svg">
-                            <span class="hidden-sm-down"> Spanish | ES</span></b-dropdown-item>
+                            <span class="hidden-sm-down"> Español | ES</span></b-dropdown-item>
                     </b-nav-item-dropdown>
 
                     <b-nav-item-dropdown right no-caret>

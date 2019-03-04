@@ -1,7 +1,6 @@
 <template>
     <div>
 
-
         <form @submit="onSubmit">
 
             <div class="role form-group">
@@ -17,36 +16,45 @@
             <div v-if="form.status != ''" class="formInscri">
                 <div class="form-group">
                     <label for="email">Email : <span class="requis">*</span></label>
-                    <input id="email" class="form-control" type="email" v-model="form.email" required placeholder="Enter email">
+                    <input id="email" class="form-control" type="email" v-model="form.email" required
+                           placeholder="Enter email">
                 </div>
 
                 <div class="form-group" v-if="form.status === 'salarie'">
                     <label for="name">Name : <span class="requis">*</span></label>
-                    <input id="name" class="form-control" type="text" v-model="form.name" required placeholder="Enter name">
+                    <input id="name" class="form-control" type="text" v-model="form.name" required
+                           placeholder="Enter name">
                 </div>
 
                 <div class="form-group" v-if="form.status === 'association'">
                     <label for="name">Association Name : <span class="requis">*</span></label>
-                    <input id="name" class="form-control" type="text" v-model="form.name" required placeholder="Enter name">
+                    <input id="name" class="form-control" type="text" v-model="form.name" required
+                           placeholder="Enter name">
                 </div>
 
                 <div class="form-group" v-if="form.status === 'rh'">
                     <label for="name">HR Team name : <span class="requis">*</span></label>
-                    <input id="name" class="form-control" type="text" v-model="form.name" required placeholder="Enter name">
+                    <input id="name" class="form-control" type="text" v-model="form.name" required
+                           placeholder="Enter name">
                 </div>
 
                 <div class="form-group" v-if="form.status === 'salarie'">
                     <label for="lastName">Surname : <span class="requis">*</span></label>
-                    <input id="name" class="form-control" type="text" v-model="form.lastName" required placeholder="Enter lastname">
+                    <input id="name" class="form-control" type="text" v-model="form.lastName" required
+                           placeholder="Enter lastname">
                 </div>
 
 
                 <div class="form-group">
                     <label for="password">Password : <span class="requis">*</span></label>
                     <div class="input-group mb-3">
-                        <input id="password" class="form-control" :type="type" v-model="form.password" required placeholder="Enter password" pattern=".{8,}" aria-describedby="passwordHelp">
-                        <div class="input-group-append"><a class="eye" @click="type === 'text' ? type = 'password' : type = 'text'"> <!--Ternary function-->
-                                <font-awesome-icon :icon="type === 'text' ? 'eye' : 'eye-slash'" /></a></div> <!--Ternary function-->
+                        <input id="password" class="form-control" :type="type" v-model="form.password" required
+                               placeholder="Enter password" pattern=".{8,}" aria-describedby="passwordHelp">
+                        <div class="input-group-append"><a class="eye"
+                                                           @click="type === 'text' ? type = 'password' : type = 'text'">
+                            <!--Ternary function-->
+                            <font-awesome-icon :icon="type === 'text' ? 'eye' : 'eye-slash'"/>
+                        </a></div> <!--Ternary function-->
                     </div>
                     <small id="passwordHelp" class="form-text text-muted">Eight (8) characters minimum</small>
                 </div>
@@ -54,9 +62,12 @@
                 <div class="form-group">
                     <label for="checkPassword">Confirm Password : <span class="requis">*</span></label>
                     <div class="input-group mb-3">
-                        <input id="checkPassword" class="form-control" :type="type" v-model="form.checkPassword" required placeholder="Enter password" pattern=".{8,}" aria-describedby="passwordHelp">
-                        <div class="input-group-append"><a class="eye" @click="type === 'text' ? type = 'password' : type = 'text'">
-                                <font-awesome-icon :icon="type === 'text' ? 'eye' : 'eye-slash'" /></a></div>
+                        <input id="checkPassword" class="form-control" :type="type" v-model="form.checkPassword"
+                               required placeholder="Enter password" pattern=".{8,}" aria-describedby="passwordHelp">
+                        <div class="input-group-append"><a class="eye"
+                                                           @click="type === 'text' ? type = 'password' : type = 'text'">
+                            <font-awesome-icon :icon="type === 'text' ? 'eye' : 'eye-slash'"/>
+                        </a></div>
                     </div>
                     <small id="passwordHelp" class="form-text text-muted">Confirm Password</small>
                     <div v-if="form.password != form.checkPassword">
@@ -72,9 +83,10 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">+33</span>
                         </div>
-                        <input id="phoneNumber" class="form-control" type="tel" v-model="form.phoneNumber" required placeholder="Enter ton 06" pattern="[0-9]{10}" aria-describedby="phoneHelp">
+                        <input id="phoneNumber" class="form-control" type="tel" v-model="form.phoneNumber" required
+                               placeholder="Enter your phone number" pattern="[0-9]{9}" aria-describedby="phoneHelp">
                     </div>
-                    <small id="phoneHelp" class="form-text text-muted">ex: 0123456789</small>
+                    <small id="phoneHelp" class="form-text text-muted">ex: 123456789</small>
                 </div>
 
 
@@ -90,10 +102,11 @@
 
                 <div v-if="form.status === 'association'">
                     <div v-if="form.city != null" class="bouton">
-                        <button class="btn btn-primary btn-lg rounded" name="submit" value="Submit" type="submit">Submit</button>
+                        <button class="btn btn-primary btn-lg rounded" name="submit" value="Submit" type="submit">
+                            Submit
+                        </button>
                     </div>
                 </div>
-
 
 
                 <div v-if="form.status != 'association'">
@@ -101,16 +114,18 @@
                         <label for="entityCap">Entity : <span class="requis">*</span></label>
                         <select class="form-control" v-model="form.entityCap" id="entityCap" name="entityCap">
                             <option :value="entityCap">Please select an option</option>
-                            <option value="Apps">FS</option>
+                            <option value="FS">FS</option>
                             <option value="Apps">Apps</option>
-                            <option value="Apps">Sogeti ATS</option>
-                            <option value="Apps">Sogeti Hi-Tech</option>
+                            <option value="Sogeti ATS">Sogeti ATS</option>
+                            <option value="Sogeti hi-tech">Sogeti Hi-Tech</option>
                         </select>
                     </div>
 
 
                     <div v-if="form.entityCap != null" class="bouton">
-                        <button class="btn btn-primary btn-lg rounded" name="submit" value="Submit" type="submit">Submit</button>
+                        <button class="btn btn-primary btn-lg rounded" name="submit" value="Submit" type="submit">
+                            Submit
+                        </button>
                     </div>
                 </div>
 
@@ -124,10 +139,9 @@
 
             </div>
         </form>
-        <p> <br> <br> <br>
+        <p><br> <br> <br>
             ICI {{ form }}
         </p>
-
 
 
     </div>
@@ -136,6 +150,7 @@
 
 <script>
     import axios from 'axios'
+
     export default {
         name: 'inscription',
 
@@ -169,9 +184,9 @@
                 console.log("En attente de post...");
                 //                'http://httpbin.org/post'
                 axios.post('http://192.168.0.40:8181/api/users', this.form).then((response) => { //TODO change http
-                        console.log('Bien ouej =>', response);
-                        this.$router.push("/");
-                    })
+                    console.log('Bien ouej =>', response);
+                    this.$router.push("/");
+                })
                     .catch((response) => {
                         this.form = response.data
                         console.log('perdu =>', response);
