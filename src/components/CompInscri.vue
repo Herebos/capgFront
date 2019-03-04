@@ -165,8 +165,8 @@
         methods: {
             onSubmit(e) {
                 e.preventDefault();
-                console.log(this.form)
-                console.log("En attente de post...")
+                console.log(this.form);
+                console.log("En attente de post...");
                 //                'http://httpbin.org/post'
                 axios.post('http://192.168.0.40:8181/api/users', this.form).then((response) => { //TODO change http
                         console.log('Bien ouej =>', response);

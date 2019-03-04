@@ -67,23 +67,5 @@
         background: #005380;
     }
 
-    .cardCont {
-        height: 100%;
-        margin: auto;
-        display: flex;
-        justify-content: space-evenly;
-        width: 80%;
-        flex-wrap: wrap;
-    }
-
-    .card {
-        width: 30%;
-    //max-width: 35%;
-    }
-
-    .leclik {
-        cursor: pointer;
-    }
-
 
 </style>

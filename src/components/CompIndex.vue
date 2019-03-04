@@ -17,7 +17,7 @@
         },
         methods: {
             onLoad() {
-                console.log("En attente de get...")
+                console.log("En attente de get...");
                 //Pour les test 'http://httpbin.org/post'
                 axios.get('http://192.168.0.40:8181/api/users/current') //TODO change http
                     .then((response) => {

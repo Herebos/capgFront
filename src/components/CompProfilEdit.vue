@@ -49,7 +49,7 @@
         },
         methods: {
             onLoad() {
-                console.log('ici')
+                console.log('ici');
                 axios.get('http://192.168.0.40:8181/api/users/current').then((response) => { //TODO change http
                         this.user = response.data;
                         console.log("gg", this.user);
@@ -61,7 +61,7 @@
             },
             edit() {
                 //e.preventDefault();
-                console.log('en attente...')
+                console.log('en attente...');
                 axios.put('http://192.168.0.40:8181/api/users/', this.user).then((response) => { //TODO change http
                         console.log("gg2", response);
                     })
@@ -86,18 +86,6 @@
         top: 5%;
         position: relative;
     }
-
-    /*
-    span {
-        padding: 10px;
-        font-weight: bold;
-        font-size: 20px;
-        padding: 15px;
-        display: flex;
-        position: relative;
-        left: 10%;
-    }
-*/
 
     hr {
         height: 1px;

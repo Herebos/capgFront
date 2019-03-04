@@ -1,7 +1,7 @@
 import axios from "axios";
 import auth from '../utils/auth.js';
 
-axios.defaults.baseURL = "http://localhost:8181";
+axios.defaults.baseURL = "http://localhost:8181"; //TODO use base URL for axios
 
 axios.interceptors.request.use(config => {
     // Do something before request is sent...
