@@ -19,7 +19,7 @@
 
                     <b-nav-item-dropdown class="align-text" text="Langue" right no-caret>
                         <template slot="button-content">
-                            <p>Langue
+                            <p>Language
                                 <font-awesome-icon icon="chevron-circle-down"/>
                             </p>
                         </template>
@@ -28,7 +28,7 @@
                             <span class="hidden-sm-down"> France | FR</span></b-dropdown-item>
                         <b-dropdown-item href="#"><img alt="country flag" class="img-flag"
                                                        src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/fl/gb.svg">
-                            <span class="hidden-sm-down"> English | EN</span></b-dropdown-item>
+                            <span class="hidden-sm-down"> England | EN</span></b-dropdown-item>
                         <b-dropdown-item href="#"><img alt="country flag" class="img-flag"
                                                        src="https://www.capgemini.com/fr-fr/wp-content/themes/capgemini-komposite/assets/images/fl/de.svg">
                             <span class="hidden-sm-down"> Germany | DE</span></b-dropdown-item>
@@ -49,25 +49,25 @@
                             </div>
                         </template>
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
-                            <router-link to="/">Acceuil</router-link>
+                            <router-link to="/">Home</router-link>
                         </b-dropdown-item>
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
-                            <router-link to="/inscription">Inscription</router-link>
+                            <router-link to="/inscription">Sign Up</router-link>
                         </b-dropdown-item>
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
-                            <router-link to="/creeprojet">Crée un Projet</router-link>
+                            <router-link to="/creeprojet">Create a Project</router-link>
                         </b-dropdown-item>
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
-                            <router-link to="/vueprojet">Parcourir les projet</router-link>
+                            <router-link to="/vueprojet">Display Project</router-link>
                         </b-dropdown-item>
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
-                            <router-link to="/profil">Mon profil</router-link>
+                            <router-link to="/profil">Profil</router-link>
                         </b-dropdown-item>
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
-                            <router-link to="/profilRh">Profil RH</router-link>
+                            <router-link to="/profilRh">Profil HR</router-link>
                         </b-dropdown-item>
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
-                            <router-link to="/login">Login</router-link>
+                            <router-link to="/login">Sign In</router-link>
                         </b-dropdown-item>
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
                             <button class="btn-outline-danger btn"><router-link to="/login" @click="logout">Logout</router-link></button>

@@ -25,7 +25,7 @@
         methods: {
             onLoad() {
                 console.log('En attente de get...');
-                axios.get('http://192.168.0.40:8181/api/users/', {
+                axios.get('http://192.168.0.40:8181/api/users/', { //TODO change http
                     params: {
                         'id': this.id
                             }

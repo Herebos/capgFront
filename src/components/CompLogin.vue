@@ -57,7 +57,7 @@
         },
         methods: {
             login() {
-                axios.post('http://192.168.0.40:8181/api/login', this.form)
+                axios.post('http://192.168.0.40:8181/api/login', this.form) //TODO change http
                     .then(response => {
                         auth.setLocalToken(response.data);
                         this.$router.push({path: `/profil`});
