@@ -92,27 +92,4 @@
         border: 0.1em solid #CED4DA;
     }
 
-
-    /* telephone */
-    @media only screen and (max-device-width: 640px) {
-        .image {
-            display: none;
-        }
-
-        .check {
-            position: relative;
-            left: 4%;
-        }
-    }
-
-    /* tablette */
-    @media only screen and (max-device-width: 1024px) {
-
-        main {
-            display: flex;
-            flex: 4;
-        }
-
-    }
-
 </style>

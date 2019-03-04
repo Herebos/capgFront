@@ -85,18 +85,6 @@
         position: relative;
     }
 
-    /*
-    span {
-        padding: 10px;
-        font-weight: bold;
-        font-size: 20px;
-        padding: 15px;
-        display: flex;
-        position: relative;
-        left: 10%;
-    }
-*/
-
     hr {
         height: 1px;
         background: #005380;

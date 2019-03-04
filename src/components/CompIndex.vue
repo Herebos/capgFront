@@ -17,7 +17,7 @@
         },
         methods: {
             onLoad() {
-                console.log("En attente de get...")
+                console.log("En attente de get...");
                 //Pour les test 'http://httpbin.org/post'
                 axios.get('/api/users/current')
                     .then((response) => {
