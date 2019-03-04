@@ -182,7 +182,7 @@
 <script>
     import 'bootstrap/dist/css/bootstrap.css'
     import 'bootstrap-vue/dist/bootstrap-vue.css'
-    import auth from '../utils/auth.js';
+    import auth from '@/utils/auth.js';
 
     export default {
         data() {
@@ -192,7 +192,7 @@
         },
         methods: {
             logout() {
-                auth.deleteLocalToken();
+                auth.logUserOut(this);
                 console.log('gg');
             },
         },
