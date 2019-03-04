@@ -31,7 +31,7 @@
                 <span>City: {{user.city.name}}</span> <br>
                 <input type="text" v-model="user.city.name" v-if="isEditing" @keyup.enter="$emit('update')">
             </div>
-            
+
             <button @click="edit()" class="btn btn-primary btn-lg rounded">Valider</button>
         </div>
     </div>

@@ -56,7 +56,7 @@
         },
         methods: {
             login() {
-                axios.post('http://localhost:8181/api/login', this.form)
+                axios.post('/api/login', this.form)
                     .then(response => {
                         auth.setLocalToken(response.data);
                         this.$router.push({ path: `/profil` });
