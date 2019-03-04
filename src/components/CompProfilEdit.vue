@@ -50,7 +50,7 @@
         methods: {
             onLoad() {
                 console.log('ici');
-                axios.get('http://192.168.0.40:8181/api/users/current').then((response) => { //TODO change http
+                axios.get('/api/users/current').then((response) => { //TODO change http
                         this.user = response.data;
                         console.log("gg", this.user);
                     })
@@ -62,7 +62,7 @@
             edit() {
                 //e.preventDefault();
                 console.log('en attente...');
-                axios.put('http://192.168.0.40:8181/api/users/', this.user).then((response) => { //TODO change http
+                axios.put('/api/users/', this.user).then((response) => { //TODO change http
                         console.log("gg2", response);
                     })
                     .catch((response) => {

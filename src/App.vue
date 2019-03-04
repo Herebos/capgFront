@@ -70,7 +70,7 @@
                             <router-link to="/login">Sign In</router-link>
                         </b-dropdown-item>
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
-                            <button class="btn-outline-danger btn"><router-link to="/login" @click="logout">Logout</router-link></button>
+                            <button class="btn-outline-danger btn" @click="logout">Logout</button>
                         </b-dropdown-item>
                     </b-nav-item-dropdown>
                 </b-navbar-nav>
@@ -192,7 +192,7 @@
         },
         methods: {
             logout() {
-                auth.deleteLocalToken();
+                auth.logUserOut(this);
                 console.log('gg');
             },
         },
