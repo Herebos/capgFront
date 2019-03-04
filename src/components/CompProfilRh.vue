@@ -8,11 +8,11 @@
             <ul>
                 <li>
                     <font-awesome-icon class="icon" icon="calendar-alt"/>
-                    <router-link :to="{name: 'gestionDesComptes'}"> Gestion des comptes</router-link>
+                    <router-link :to="{name: 'gestionDesComptes'}"> Account management</router-link>
                 </li>
                 <li>
                     <font-awesome-icon class="icon" icon="project-diagram"/>
-                    <router-link :to="{name: 'gestionDesprojets'}">Gestion des projets</router-link>
+                    <router-link :to="{name: 'gestionDesprojets'}">Projects management</router-link>
                 </li>
             </ul>
         </div>

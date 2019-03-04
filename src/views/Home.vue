@@ -4,7 +4,7 @@
         
         <index />
         
-        <h3>Que voulez-faire ?</h3>
+        <h3>What do you want to do ?</h3>
 
 
 

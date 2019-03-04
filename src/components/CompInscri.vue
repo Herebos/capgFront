@@ -1,15 +1,14 @@
 <template>
     <div>
 
-
         <form @submit="onSubmit">
 
             <div class="role form-group">
                 <select class="form-control" id="statusInput" v-model="form.status" name="status">
                     <option :value="status">Please select an option</option>
-                    <option value="salarie">Salarié</option>
+                    <option value="salarie">Collaborator</option>
                     <option value="association">Association</option>
-                    <option value="rh">Équipe RH</option>
+                    <option value="rh">HR Team</option>
                 </select>
                 <div>Selected: <strong>{{ form.status }}</strong></div>
             </div>
@@ -17,36 +16,45 @@
             <div v-if="form.status != ''" class="formInscri">
                 <div class="form-group">
                     <label for="email">Email : <span class="requis">*</span></label>
-                    <input id="email" class="form-control" type="email" v-model="form.email" required placeholder="Enter email">
+                    <input id="email" class="form-control" type="email" v-model="form.email" required
+                           placeholder="Enter email">
                 </div>
 
                 <div class="form-group" v-if="form.status === 'salarie'">
-                    <label for="name">Nom : <span class="requis">*</span></label>
-                    <input id="name" class="form-control" type="text" v-model="form.name" required placeholder="Enter name">
+                    <label for="name">Name : <span class="requis">*</span></label>
+                    <input id="name" class="form-control" type="text" v-model="form.name" required
+                           placeholder="Enter name">
                 </div>
 
                 <div class="form-group" v-if="form.status === 'association'">
                     <label for="name">Association Name : <span class="requis">*</span></label>
-                    <input id="name" class="form-control" type="text" v-model="form.name" required placeholder="Enter name">
+                    <input id="name" class="form-control" type="text" v-model="form.name" required
+                           placeholder="Enter name">
                 </div>
 
                 <div class="form-group" v-if="form.status === 'rh'">
-                    <label for="name">Rh Team name : <span class="requis">*</span></label>
-                    <input id="name" class="form-control" type="text" v-model="form.name" required placeholder="Enter name">
+                    <label for="name">HR Team name : <span class="requis">*</span></label>
+                    <input id="name" class="form-control" type="text" v-model="form.name" required
+                           placeholder="Enter name">
                 </div>
 
                 <div class="form-group" v-if="form.status === 'salarie'">
                     <label for="lastName">Surname : <span class="requis">*</span></label>
-                    <input id="name" class="form-control" type="text" v-model="form.lastName" required placeholder="Enter lastname">
+                    <input id="name" class="form-control" type="text" v-model="form.lastName" required
+                           placeholder="Enter lastname">
                 </div>
 
 
                 <div class="form-group">
                     <label for="password">Password : <span class="requis">*</span></label>
                     <div class="input-group mb-3">
-                        <input id="password" class="form-control" :type="type" v-model="form.password" required placeholder="Enter password" pattern=".{8,}" aria-describedby="passwordHelp">
-                        <div class="input-group-append"><a class="eye" @click="type === 'text' ? type = 'password' : type = 'text'"> <!--Ternary function-->
-                                <font-awesome-icon :icon="type === 'text' ? 'eye' : 'eye-slash'" /></a></div> <!--Ternary function-->
+                        <input id="password" class="form-control" :type="type" v-model="form.password" required
+                               placeholder="Enter password" pattern=".{8,}" aria-describedby="passwordHelp">
+                        <div class="input-group-append"><a class="eye"
+                                                           @click="type === 'text' ? type = 'password' : type = 'text'">
+                            <!--Ternary function-->
+                            <font-awesome-icon :icon="type === 'text' ? 'eye' : 'eye-slash'"/>
+                        </a></div> <!--Ternary function-->
                     </div>
                     <small id="passwordHelp" class="form-text text-muted">Eight (8) characters minimum</small>
                 </div>
@@ -54,9 +62,12 @@
                 <div class="form-group">
                     <label for="checkPassword">Confirm Password : <span class="requis">*</span></label>
                     <div class="input-group mb-3">
-                        <input id="checkPassword" class="form-control" :type="type" v-model="form.checkPassword" required placeholder="Enter password" pattern=".{8,}" aria-describedby="passwordHelp">
-                        <div class="input-group-append"><a class="eye" @click="type === 'text' ? type = 'password' : type = 'text'">
-                                <font-awesome-icon :icon="type === 'text' ? 'eye' : 'eye-slash'" /></a></div>
+                        <input id="checkPassword" class="form-control" :type="type" v-model="form.checkPassword"
+                               required placeholder="Enter password" pattern=".{8,}" aria-describedby="passwordHelp">
+                        <div class="input-group-append"><a class="eye"
+                                                           @click="type === 'text' ? type = 'password' : type = 'text'">
+                            <font-awesome-icon :icon="type === 'text' ? 'eye' : 'eye-slash'"/>
+                        </a></div>
                     </div>
                     <small id="passwordHelp" class="form-text text-muted">Confirm Password</small>
                     <div v-if="form.password != form.checkPassword">
@@ -67,14 +78,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="phoneNumber">Tél : <span class="requis">*</span></label>
+                    <label for="phoneNumber">Phone Number : <span class="requis">*</span></label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">+33</span>
                         </div>
-                        <input id="phoneNumber" class="form-control" type="tel" v-model="form.phoneNumber" required placeholder="Enter ton 06" pattern="[0-9]{10}" aria-describedby="phoneHelp">
+                        <input id="phoneNumber" class="form-control" type="tel" v-model="form.phoneNumber" required
+                               placeholder="Enter your phone number" pattern="[0-9]{9}" aria-describedby="phoneHelp">
                     </div>
-                    <small id="phoneHelp" class="form-text text-muted">ex: 612345678</small>
+                    <small id="phoneHelp" class="form-text text-muted">ex: 123456789</small>
                 </div>
 
 
@@ -90,27 +102,30 @@
 
                 <div v-if="form.status === 'association'">
                     <div v-if="form.city != null" class="bouton">
-                        <button class="btn btn-primary btn-lg rounded" name="submit" value="Submit" type="submit">Submit</button>
+                        <button class="btn btn-primary btn-lg rounded" name="submit" value="Submit" type="submit">
+                            Submit
+                        </button>
                     </div>
                 </div>
 
 
-
                 <div v-if="form.status != 'association'">
                     <div class="form-group">
-                        <label for="entityCap">Divisions : <span class="requis">*</span></label>
+                        <label for="entityCap">Entity : <span class="requis">*</span></label>
                         <select class="form-control" v-model="form.entityCap" id="entityCap" name="entityCap">
                             <option :value="entityCap">Please select an option</option>
-                            <option value="Apps">FS</option>
+                            <option value="FS">FS</option>
                             <option value="Apps">Apps</option>
-                            <option value="Apps">Sogeti ATS</option>
-                            <option value="Apps">Sogeti Hi-Tech</option>
+                            <option value="Sogeti ATS">Sogeti ATS</option>
+                            <option value="Sogeti hi-tech">Sogeti Hi-Tech</option>
                         </select>
                     </div>
 
 
                     <div v-if="form.entityCap != null" class="bouton">
-                        <button class="btn btn-primary btn-lg rounded" name="submit" value="Submit" type="submit">Submit</button>
+                        <button class="btn btn-primary btn-lg rounded" name="submit" value="Submit" type="submit">
+                            Submit
+                        </button>
                     </div>
                 </div>
 
@@ -124,10 +139,9 @@
 
             </div>
         </form>
-        <p> <br> <br> <br>
+        <p><br> <br> <br>
             ICI {{ form }}
         </p>
-
 
 
     </div>
@@ -136,6 +150,7 @@
 
 <script>
     import axios from 'axios'
+
     export default {
         name: 'inscription',
 

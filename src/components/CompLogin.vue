@@ -38,8 +38,7 @@
 
 <script>
     import axios from 'axios';
-    import auth from '../../utils/auth.js';
-
+    import auth from '../utils/auth.js'
     export default {
         name: 'login',
         data() {
@@ -60,7 +59,7 @@
                 axios.post('/api/login', this.form) //TODO change http
                     .then(response => {
                         auth.setLocalToken(response.data);
-                        this.$router.push({path: `/profil`});
+                        this.$router.push({ path: `/profil` });
                         console.log('gg', response);
                     })
                     .catch(error => {

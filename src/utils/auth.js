@@ -1,5 +1,5 @@
 const tokenName = "Authorization";
-const loginPath = "/login";
+const loginPath = '/login';
 
 /**
  * @return {(string|null)} the auth token if found, null otherwise

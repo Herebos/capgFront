@@ -1,5 +1,5 @@
 import axios from "axios";
-import auth from '../utils/auth.js';
+import auth from '@/utils/auth.js';
 
 axios.defaults.baseURL = "http://localhost:8181"; //TODO use base URL for axios
 
