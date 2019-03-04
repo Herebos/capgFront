@@ -51,8 +51,8 @@
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
                             <router-link to="/">Home</router-link>
                         </b-dropdown-item>
-                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="!islogged">
-                            <router-link to="/inscription">Sign Up</router-link>
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="islogged">
+                            <router-link to="/inscription">Sign In</router-link>
                         </b-dropdown-item>
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
                             <router-link to="/creeprojet">Create a Project</router-link>
@@ -66,10 +66,10 @@
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
                             <router-link to="/profilRh">Profil HR</router-link>
                         </b-dropdown-item>
-                        <b-dropdown-item href="" v-on:click="isActive = !isActive">
-                            <router-link to="/login">Sign In</router-link>
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="islogged">
+                            <router-link to="/login">Sign Up</router-link>
                         </b-dropdown-item>
-                        <b-dropdown-item href="" v-on:click="isActive = !isActive">
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="!islogged">
                             <button class="btn-outline-danger btn" @click="logout">Logout</button>
                         </b-dropdown-item>
                     </b-nav-item-dropdown>
