@@ -51,25 +51,25 @@
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
                             <router-link to="/">Home</router-link>
                         </b-dropdown-item>
-                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="!isLoggedIn">
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="isLogged">
                             <router-link to="/inscription">Sign In</router-link>
                         </b-dropdown-item>
-                        <b-dropdown-item href="" v-on:click="isActive = !isActive">
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="isLogged">
+                            <router-link to="/login">Sign Up</router-link>
+                        </b-dropdown-item>
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="status === 'rh' || 'association'">
                             <router-link to="/creeprojet">Create a Project</router-link>
                         </b-dropdown-item>
                         <b-dropdown-item href="" v-on:click="isActive = !isActive">
                             <router-link to="/vueprojet">Display Project</router-link>
                         </b-dropdown-item>
-                        <b-dropdown-item href="" v-on:click="isActive = !isActive">
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="!isLogged">
                             <router-link to="/profil">Profil</router-link>
                         </b-dropdown-item>
-                        <b-dropdown-item href="" v-on:click="isActive = !isActive">
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="!isLogged">
                             <router-link to="/profilRh">Profil HR</router-link>
                         </b-dropdown-item>
-                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="!isLoggedIn">
-                            <router-link to="/login">Sign Up</router-link>
-                        </b-dropdown-item>
-                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="isLoggedIn">
+                        <b-dropdown-item href="" v-on:click="isActive = !isActive" v-if="!isLogged">
                             <button class="btn-outline-danger btn" @click="logout">Logout</button>
                         </b-dropdown-item>
                     </b-nav-item-dropdown>
@@ -180,14 +180,16 @@
 </template>
 
 <script>
-    import 'bootstrap/dist/css/bootstrap.css'
-    import 'bootstrap-vue/dist/bootstrap-vue.css'
-    import auth from '@/utils/auth.js';
+    import 'bootstrap/dist/css/bootstrap.css';
+    import 'bootstrap-vue/dist/bootstrap-vue.css';
+    import auth from './utils/auth.js';
+    import axios from 'axios';
 
     export default {
         data() {
             return {
                 isActive: false,
+                user: [],
             };
         },
         methods: {
@@ -195,7 +197,25 @@
                 auth.logUserOut(this);
                 console.log('gg');
             },
+            isLogged() {
+                auth.isLoggedIn()
+            },
+            onLoad() {
+                console.log('ici');
+                axios.get('/api/users/current').then((response) => { //TODO change http
+                    this.user = response.data;
+                    console.log("gg", this.user);
+                })
+                    .catch((response) => {
+                        // this.user= response.data
+                        console.log("null", response);
+                    });
+            }
         },
+    mounted() {
+            this.isLogged();
+            this.onLoad();
+    },
 
     }
 
